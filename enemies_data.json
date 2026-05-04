@@ -1,0 +1,2008 @@
+[
+  {
+    "name": "罗马军团兵",
+    "nameEn": "Roman Legionary",
+    "type": "普通",
+    "stage": 1,
+    "hp": "80 — 100",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_roman_legionary_nobg.png",
+    "mechanic": "【新兵列阵】战斗开始时，自带 10 层防火墙。",
+    "intents": [
+      "基础打击 → 造成 15 点伤害",
+      "多段过载 → 造成 6×2 点伤害",
+      "协议加固 → 获得 15 层防火墙"
+    ],
+    "logic": "倾向于先使用「协议加固」防守，然后交替使用单体和多段攻击。"
+  },
+  {
+    "name": "标枪手",
+    "nameEn": "Velites",
+    "type": "普通",
+    "stage": 1,
+    "hp": "60 — 80",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_velites_nobg.png",
+    "mechanic": "【破甲投掷】攻击有几率附加「装甲降解(1)」。",
+    "intents": [
+      "植入异常 → 造成 12 点伤害 + 装甲降解(1)",
+      "基础打击 → 造成 24 点伤害",
+      "战术撤退 → 获得 10 层防火墙 + 闪避"
+    ],
+    "logic": "起手必定使用「植入异常」挂装甲降解，随后进行高额的基础打击。"
+  },
+  {
+    "name": "希腊学者之影",
+    "nameEn": "Echo of Greek Scholar",
+    "type": "普通",
+    "stage": 1,
+    "hp": "70 — 90",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_greek_scholar_nobg.png",
+    "mechanic": "【诡辩】每当玩家打出一张技能牌，学者之影获得 2 层防火墙。",
+    "intents": [
+      "逻辑污染 → 向玩家牌库洗入 1 张「困惑」",
+      "系统升级 → 为所有友军附加「强化(1)」",
+      "基础打击 → 造成 15 点伤害"
+    ],
+    "logic": "很少直接攻击，主要负责给队友加 Buff 和污染玩家牌库。"
+  },
+  {
+    "name": "百夫长",
+    "nameEn": "Centurion",
+    "type": "精英",
+    "stage": 1,
+    "hp": "280 — 320",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_centurion_nobg.png",
+    "mechanic": "【军团之心】战斗开始时召唤 1 个罗马军团兵，百夫长存活期间所有友军获得「坚韧(1)」。",
+    "intents": [
+      "战吼 → 自身获得强化(2)，友军获得强化(1)",
+      "处决 → 造成 12×3 点伤害，装甲降解状态下额外攻击 1 次",
+      "重盾重击 → 造成 25 点伤害 + 获得 30 层防火墙"
+    ],
+    "logic": "第一回合必定「战吼」，随后在「处决」和「重盾重击」之间循环。"
+  },
+  {
+    "name": "机械暴君·凯撒",
+    "nameEn": "Mecha-Tyrant Caesar",
+    "type": "Boss",
+    "stage": 1,
+    "hp": "800",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_caesar_boss_nobg.png",
+    "mechanic": "【独裁者】每回合结束时，若凯撒身上没有防火墙，强制剥夺玩家 1 点算力。\n【高维征服】多段过载打破防火墙造成生命值伤害时，施加「代码侵蚀」。",
+    "intents": [
+      "指令：列阵 → 召唤 2 个标枪手 + 自身获得 40 层防火墙",
+      "指令：肃清 → 造成 10×4 点伤害",
+      "指令：镇压 → 造成玩家当前生命值 20% 的真实伤害 + 迟缓(1)",
+      "独裁演说 → 清除自身所有 Debuff + 获得强化(2)"
+    ],
+    "logic": "第一回合必定「列阵」。场上有小兵时倾向「独裁演说」+「肃清」；无小兵时使用「镇压」或重新召唤。"
+  },
+  {
+    "name": "波斯弓箭手",
+    "nameEn": "Persian Archer",
+    "type": "普通",
+    "stage": 1,
+    "hp": "65 — 85",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_persian_archer_nobg.png",
+    "mechanic": "【箭雨】攻击时有 30% 几率额外射出 1 箭。",
+    "intents": [
+      "精准射击 → 造成 18 点伤害",
+      "箭雨 → 造成 8×3 点伤害",
+      "后撤射击 → 造成 12 点伤害 + 获得 8 层防火墙"
+    ],
+    "logic": "远程输出型，倾向于保持距离交替使用精准射击和箭雨。"
+  },
+  {
+    "name": "波斯枪兵",
+    "nameEn": "Persian Spearman",
+    "type": "普通",
+    "stage": 1,
+    "hp": "90 — 110",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_persian_spearman_nobg.png",
+    "mechanic": "【方阵防御】与其他波斯枪兵同时在场时，双方各获得 5 层防火墙。",
+    "intents": [
+      "长矛突刺 → 造成 20 点伤害",
+      "方阵防御 → 获得 18 层防火墙",
+      "协同冲锋 → 造成 15 点伤害（场上每个友军 +3）"
+    ],
+    "logic": "防御型前排，倾向于先防御再攻击。与友军配合时协同冲锋伤害可观。"
+  },
+  {
+    "name": "波斯骑兵",
+    "nameEn": "Persian Cavalry",
+    "type": "普通",
+    "stage": 1,
+    "hp": "75 — 95",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_persian_cavalry_nobg.png",
+    "mechanic": "【冲锋】首回合攻击伤害翻倍。",
+    "intents": [
+      "骑兵冲锋 → 造成 22 点伤害（首回合 44）",
+      "弯刀横扫 → 造成 14×2 点伤害",
+      "战术撤退 → 获得 12 层防火墙 + 下回合冲锋伤害翻倍"
+    ],
+    "logic": "首回合必定冲锋（44 点高伤害），之后交替横扫和撤退。撤退后下次冲锋再次翻倍。"
+  },
+  {
+    "name": "不朽军卫士",
+    "nameEn": "Immortal Guard",
+    "type": "精英",
+    "stage": 1,
+    "hp": "350 — 400",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_immortal_guard_nobg.png",
+    "mechanic": "【不朽军团】被击杀后，若场上有其他波斯单位，以 30% HP 复活一次。\n【精锐护卫】每回合为 HP 最低的友军提供 15 层防火墙。",
+    "intents": [
+      "不朽之刃 → 造成 28 点伤害",
+      "守护之盾 → 为 HP 最低友军提供 25 层防火墙 + 自身获得 15 层",
+      "不朽冲锋 → 造成 18×2 点伤害 + 施加「迟缓(1)」"
+    ],
+    "logic": "优先保护友军，交替使用守护和攻击。被击杀后复活一次，需要二次击杀。"
+  },
+  {
+    "name": "万王之王·薛西斯之影",
+    "nameEn": "Shadow of Xerxes",
+    "type": "Boss",
+    "stage": 1,
+    "hp": "1000",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_xerxes_boss_nobg.png",
+    "mechanic": "【万王之王】战斗开始时召唤 2 名不朽军卫士。每当一名卫士被击杀，薛西斯获得「愤怒(2)」（攻击力 +4）。\n【黄金王座】每 3 回合恢复 50 HP + 获得 30 层防火墙。",
+    "intents": [
+      "万王之怒 → 造成 25 点伤害 + 施加「恐惧(1)」（下回合随机 1 张手牌无法使用）",
+      "召唤不朽军 → 召唤 1 名不朽军卫士",
+      "黄金审判 → 造成 35 点伤害（每个已死亡卫士 +10）",
+      "王座庇护 → 恢复 50 HP + 获得 30 层防火墙"
+    ],
+    "logic": "开局召唤 2 卫士。卫士存活时以防御和恢复为主；卫士死亡后进入愤怒状态，攻击力大幅提升。"
+  },
+  {
+    "name": "孔雀弓手",
+    "nameEn": "Maurya Archer",
+    "type": "普通",
+    "stage": 1,
+    "hp": "70 — 90",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_maurya_archer_nobg.png",
+    "mechanic": "【毒箭】攻击有 40% 几率施加「中毒(2)(2)」。",
+    "intents": [
+      "毒箭射击 → 造成 14 点伤害 + 40% 几率施加中毒(2)(2)",
+      "连射 → 造成 8×3 点伤害",
+      "隐蔽 → 获得 10 层防火墙 + 下回合攻击必定附加中毒"
+    ],
+    "logic": "以毒箭持续消耗为主。隐蔽后下回合必定施加中毒，需要注意清除。"
+  },
+  {
+    "name": "那伽战士",
+    "nameEn": "Naga Warrior",
+    "type": "普通",
+    "stage": 1,
+    "hp": "100 — 120",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_naga_warrior_nobg.png",
+    "mechanic": "【蛇之韧性】HP 低于 50% 时，每回合恢复 5 HP。",
+    "intents": [
+      "蛇形斩击 → 造成 20 点伤害",
+      "缠绕 → 造成 12 点伤害 + 施加「迟缓(1)」",
+      "蛇皮防御 → 获得 20 层防火墙"
+    ],
+    "logic": "高 HP 前排，低血量时有持续恢复。缠绕的迟缓效果会降低玩家出牌效率。"
+  },
+  {
+    "name": "婆罗门法师",
+    "nameEn": "Brahmin Sorcerer",
+    "type": "普通",
+    "stage": 1,
+    "hp": "60 — 80",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_brahmin_sorcerer_nobg.png",
+    "mechanic": "【梵咒】每 2 回合释放一次梵咒，对玩家施加随机 Debuff。",
+    "intents": [
+      "梵咒 → 施加随机 Debuff（中毒/迟缓/装甲降解）",
+      "神圣之火 → 造成 22 点伤害",
+      "祈祷 → 为所有友军恢复 10 HP"
+    ],
+    "logic": "Debuff 施加者。梵咒的随机性使其难以预判。建议优先击杀。"
+  },
+  {
+    "name": "战象",
+    "nameEn": "War Elephant",
+    "type": "精英",
+    "stage": 1,
+    "hp": "400 — 450",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_war_elephant_nobg.png",
+    "mechanic": "【践踏】攻击时对玩家造成额外 5 点真实伤害。\n【厚皮】受到的伤害减少 3 点（最低 1）。",
+    "intents": [
+      "践踏冲锋 → 造成 30 点伤害 + 5 点真实伤害",
+      "象牙横扫 → 造成 18×2 点伤害",
+      "厚皮防御 → 获得 25 层防火墙 + 受伤减少 3"
+    ],
+    "logic": "高 HP 高防御的坦克型精英。践踏的真实伤害无法被防火墙抵挡。建议用高爆发快速击杀。"
+  },
+  {
+    "name": "迦腻色伽之影",
+    "nameEn": "Shadow of Kanishka",
+    "type": "Boss",
+    "stage": 1,
+    "hp": "900",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_kanishka_boss_nobg.png",
+    "mechanic": "【贵霜帝王】每 2 回合在「佛法」和「武力」之间切换形态。佛法形态：恢复 HP + 施加 Debuff；武力形态：高伤害攻击。\n【丝路霸主】战斗开始时获得 3 层「贸易壁垒」（每层使玩家打牌费用 +1，攻击可移除）。",
+    "intents": [
+      "佛法·慈悲 → 恢复 60 HP + 施加「迟缓(2)」",
+      "佛法·轮回 → 将玩家弃牌堆 2 张牌洗入牌库（可能是废牌）",
+      "武力·铁骑 → 造成 35 点伤害",
+      "武力·征服 → 造成 20×2 点伤害 + 施加「装甲降解(1)」"
+    ],
+    "logic": "双形态切换。佛法形态恢复和干扰为主，武力形态高伤害。建议在佛法形态集中输出，武力形态注重防御。"
+  },
+  {
+    "name": "沙漠匪徒",
+    "nameEn": "Desert Bandit",
+    "type": "普通",
+    "stage": 1,
+    "hp": "55 — 75",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_desert_bandit_nobg.png",
+    "mechanic": "【伏击】首回合从隐身状态攻击，伤害 +50%。",
+    "intents": [
+      "伏击斩杀 → 造成 20 点伤害（首回合 30）",
+      "沙暴掩护 → 获得 12 层防火墙 + 进入隐身（下回合伏击伤害 +50%）",
+      "连续刺击 → 造成 10×2 点伤害"
+    ],
+    "logic": "首回合伏击高伤害。之后交替使用沙暴掩护和伏击，形成持续的高伤害循环。"
+  },
+  {
+    "name": "骆驼骑兵",
+    "nameEn": "Camel Cavalry",
+    "type": "普通",
+    "stage": 1,
+    "hp": "85 — 105",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_camel_cavalry_nobg.png",
+    "mechanic": "【沙漠适应】在「沙暴侵蚀」环境下免疫防火墙流失效果。",
+    "intents": [
+      "骆驼冲锋 → 造成 22 点伤害",
+      "沙漠风暴 → 造成 12 点伤害 + 施加「沙蚀(1)」（每回合失去 2 层防火墙）",
+      "坚韧行军 → 获得 15 层防火墙"
+    ],
+    "logic": "适应沙漠环境的骑兵。沙蚀效果持续消耗玩家防火墙。"
+  },
+  {
+    "name": "绿洲幻影",
+    "nameEn": "Oasis Phantom",
+    "type": "普通",
+    "stage": 1,
+    "hp": "50 — 70",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_oasis_phantom_nobg.png",
+    "mechanic": "【海市蜃楼】被攻击时有 25% 几率闪避（伤害无效）。",
+    "intents": [
+      "幻影打击 → 造成 16 点伤害",
+      "镜像分身 → 召唤 1 个幻影（HP 1，被攻击时消耗玩家 1 点算力）",
+      "消散 → 消失 1 回合（免疫所有伤害）"
+    ],
+    "logic": "闪避和消散使其难以命中。幻影分身消耗玩家算力。建议用多段攻击确保命中。"
+  },
+  {
+    "name": "粟特商队护卫",
+    "nameEn": "Sogdian Guard",
+    "type": "精英",
+    "stage": 1,
+    "hp": "300 — 350",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_sogdian_guard_nobg.png",
+    "mechanic": "【商路守护】战斗开始时携带 3 件「商品」。每件商品提供不同被动效果（丝绸：减伤 5；香料：每回合恢复 8 HP；宝石：攻击力 +5）。击杀后玩家可获得 1 件商品作为临时 Buff。",
+    "intents": [
+      "商队之刃 → 造成 25 点伤害",
+      "商品防御 → 消耗 1 件商品获得 30 层防火墙 + 对应效果翻倍 1 回合",
+      "护卫冲锋 → 造成 15×2 点伤害 + 施加「迟缓(1)」"
+    ],
+    "logic": "商品系统使其前期很强但逐渐变弱。消耗商品时防御力暴增但商品用完后就没有被动加成了。"
+  },
+  {
+    "name": "明王·鸠摩罗什之影",
+    "nameEn": "Shadow of Kumarajiva",
+    "type": "Boss",
+    "stage": 1,
+    "hp": "850",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_mingwang_boss_nobg.png",
+    "mechanic": "【译经大师】每 2 回合「翻译」玩家 1 张手牌，将其效果反转（攻击牌变为给敌人加防火墙，防御牌变为自伤）。\n【佛光普照】每 3 回合释放佛光，恢复所有友军 30 HP + 清除友军所有 Debuff。",
+    "intents": [
+      "经文反转 → 翻译玩家 1 张手牌（效果反转）",
+      "佛光普照 → 恢复所有友军 30 HP + 清除 Debuff",
+      "梵文轰击 → 造成 28 点伤害",
+      "智慧之眼 → 查看玩家全部手牌 + 获得 20 层防火墙"
+    ],
+    "logic": "翻译机制是核心威胁——被翻译的牌会反向生效。建议在翻译回合打出低价值牌。佛光普照的群体恢复需要在间隙集中输出。"
+  },
+  {
+    "name": "秦弩兵",
+    "nameEn": "Qin Crossbowman",
+    "type": "普通",
+    "stage": 1,
+    "hp": "70 — 85",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_qin_crossbowman_nobg.png",
+    "mechanic": "【连弩】每 3 回合发射一次连弩齐射（3 段伤害）。",
+    "intents": [
+      "弩箭射击 → 造成 16 点伤害",
+      "连弩齐射（每 3 回合）→ 造成 10×3 点伤害",
+      "装填 → 获得 10 层防火墙 + 下回合攻击力 +5"
+    ],
+    "logic": "连弩齐射是主要威胁。装填回合是输出窗口。"
+  },
+  {
+    "name": "秦甲士",
+    "nameEn": "Qin Infantry",
+    "type": "普通",
+    "stage": 1,
+    "hp": "95 — 115",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_qin_infantry_nobg.png",
+    "mechanic": "【军阵】与其他秦军同时在场时，所有秦军攻击力 +3。",
+    "intents": [
+      "戟击 → 造成 20 点伤害",
+      "军阵防御 → 获得 20 层防火墙",
+      "冲锋陷阵 → 造成 15 点伤害 + 施加「装甲降解(1)」"
+    ],
+    "logic": "军阵联动使多个秦军同时在场时威胁倍增。建议逐个击破。"
+  },
+  {
+    "name": "方士炼丹师",
+    "nameEn": "Qin Alchemist",
+    "type": "普通",
+    "stage": 1,
+    "hp": "55 — 75",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_qin_alchemist_nobg.png",
+    "mechanic": "【丹药】每 2 回合为 1 名友军提供丹药（恢复 15 HP 或获得强化(1)）。",
+    "intents": [
+      "丹火术 → 造成 18 点伤害",
+      "炼丹 → 为 HP 最低友军恢复 15 HP 或施加强化(1)",
+      "毒烟 → 造成 10 点伤害 + 施加「中毒(2)(2)」"
+    ],
+    "logic": "辅助型敌人，持续为友军恢复和强化。建议优先击杀。"
+  },
+  {
+    "name": "兵马俑将军",
+    "nameEn": "Terracotta General",
+    "type": "精英",
+    "stage": 1,
+    "hp": "380 — 420",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_terracotta_general_nobg.png",
+    "mechanic": "【永恒军阵】每 2 回合召唤 1 个兵马俑士兵（HP 40，攻击 10）。场上最多 3 个。\n【将军之威】场上每个兵马俑使将军攻击力 +5。",
+    "intents": [
+      "召唤兵马俑 → 召唤 1 个兵马俑士兵",
+      "将军斩击 → 造成 25 点伤害（每个兵马俑 +5）",
+      "军阵冲锋 → 所有兵马俑各造成 10 点伤害 + 将军造成 20 点伤害",
+      "铁壁防御 → 获得 35 层防火墙"
+    ],
+    "logic": "持续召唤兵马俑增强自身。场上兵马俑越多将军越强。建议先清理兵马俑再集中攻击将军。"
+  },
+  {
+    "name": "机械神谕·秦始皇",
+    "nameEn": "Mecha-Oracle Qin Shi Huang",
+    "type": "Boss",
+    "stage": 1,
+    "hp": "1200",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_qin_shihuang_boss_nobg.png",
+    "mechanic": "【焚书坑儒】每 3 回合「焚烧」玩家手牌中 1 张牌（永久移出本局游戏）。\n【万里长城】战斗开始时获得 60 层防火墙。每当防火墙被完全打破，秦始皇获得「暴怒(3)」（攻击力 +9，持续 2 回合）。\n【不死药】HP < 25% 时每回合恢复 30 HP。",
+    "intents": [
+      "焚书 → 永久移除玩家 1 张手牌",
+      "长城重建 → 获得 50 层防火墙",
+      "帝王之怒 → 造成 35 点伤害 + 施加「恐惧(1)」",
+      "兵马俑军团 → 召唤 2 个兵马俑士兵 + 自身获得 20 层防火墙"
+    ],
+    "logic": "焚书是核心威胁，会永久削弱玩家卡组。长城防火墙极厚但打破后会触发暴怒。低血量恢复使其需要高爆发一波击杀。"
+  },
+  {
+    "name": "拜占庭喷火船",
+    "nameEn": "Byzantine Dromon",
+    "type": "精英",
+    "stage": 1,
+    "hp": "450",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_byzantine_dromon_nobg.png",
+    "mechanic": "【希腊火】每回合给玩家牌库塞入 2 张「燃烧」废牌，抽到时扣血。",
+    "intents": [
+      "侧舷齐射 → 造成 12×3 点伤害",
+      "希腊火投掷 → 造成 20 点伤害 + 附加 3 层燃烧 + 塞 2 张废牌"
+    ],
+    "logic": "交替使用齐射和希腊火，废牌污染是主要威胁，需优先清除废牌。"
+  },
+  {
+    "name": "笈多弓箭手",
+    "nameEn": "Gupta Archer",
+    "type": "普通",
+    "stage": 2,
+    "hp": "140 — 160",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_gupta_archer_nobg.png",
+    "mechanic": "【火箭】攻击有 30% 几率附加「燃烧(2)(2)」。",
+    "intents": [
+      "火箭射击 → 造成 22 点伤害 + 30% 几率燃烧(2)(2)",
+      "连射 → 造成 12×3 点伤害",
+      "瞄准 → 获得 10 层防火墙 + 下回合攻击必定附加燃烧"
+    ],
+    "logic": "火箭持续消耗型。瞄准后下回合必定施加燃烧。"
+  },
+  {
+    "name": "恒河鳄鱼",
+    "nameEn": "Ganges Crocodile",
+    "type": "普通",
+    "stage": 2,
+    "hp": "180 — 200",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_ganges_croc_nobg.png",
+    "mechanic": "【潜伏】每 2 回合潜入水中（免疫伤害 1 回合），浮出时攻击伤害翻倍。",
+    "intents": [
+      "死亡翻滚 → 造成 28 点伤害（潜伏后 56）",
+      "撕咬 → 造成 18 点伤害 + 施加「流血(3)(2)」",
+      "潜伏 → 免疫伤害 1 回合"
+    ],
+    "logic": "潜伏-浮出循环。浮出时伤害翻倍是主要威胁。潜伏回合无法造成伤害，需提前叠防。"
+  },
+  {
+    "name": "印度苦行僧",
+    "nameEn": "Hindu Ascetic",
+    "type": "普通",
+    "stage": 2,
+    "hp": "120 — 140",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_hindu_ascetic_nobg.png",
+    "mechanic": "【苦行】每回合自伤 5 HP，但攻击力永久 +2。",
+    "intents": [
+      "苦行之火 → 造成 25 点伤害（随回合递增）",
+      "净化 → 清除自身所有 Debuff + 恢复 15 HP",
+      "火焰步行 → 造成 15×2 点伤害"
+    ],
+    "logic": "自伤换攻击力，越拖越强。建议快速击杀。净化能力使 Debuff 策略效果有限。"
+  },
+  {
+    "name": "笈多战象精英",
+    "nameEn": "Gupta War Elephant Elite",
+    "type": "精英",
+    "stage": 2,
+    "hp": "550 — 600",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_gupta_elephant_elite_nobg.png",
+    "mechanic": "【铁甲象阵】受到的伤害减少 5 点（最低 1）。\n【践踏】攻击附带 8 点真实伤害。\n【狂暴】HP < 40% 时攻击力翻倍但每回合自伤 10。",
+    "intents": [
+      "铁甲践踏 → 造成 35 点伤害 + 8 点真实伤害",
+      "象鼻横扫 → 造成 20×2 点伤害",
+      "铁壁 → 获得 40 层防火墙",
+      "狂暴冲锋（HP < 40%）→ 造成 50 点伤害 + 8 点真实伤害"
+    ],
+    "logic": "高减伤坦克型。低血量狂暴后伤害极高但会自伤。建议在狂暴前尽量削血，狂暴后等其自伤。"
+  },
+  {
+    "name": "戒日王之影",
+    "nameEn": "Shadow of Harsha",
+    "type": "Boss",
+    "stage": 2,
+    "hp": "2000",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_harsha_boss_nobg.png",
+    "mechanic": "【统一北印】战斗开始时召唤 1 名笈多弓箭手和 1 名印度苦行僧。\n【佛法护持】每 3 回合为所有友军恢复 40 HP + 清除 Debuff。\n【帝王威压】每当玩家连续打出 3 张以上的牌，戒日王获得 1 次额外行动。",
+    "intents": [
+      "帝王斩击 → 造成 30 点伤害",
+      "佛法护持 → 所有友军恢复 40 HP + 清除 Debuff",
+      "召唤援军 → 召唤 1 名笈多弓箭手",
+      "威压反击（玩家出 3+ 牌时）→ 额外行动 1 次"
+    ],
+    "logic": "限制玩家出牌数量。每回合出牌不超过 2 张可避免触发威压。佛法护持的群体恢复需要在间隙集中输出。"
+  },
+  {
+    "name": "那烂陀僧侣",
+    "nameEn": "Nalanda Monk",
+    "type": "普通",
+    "stage": 2,
+    "hp": "130 — 150",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_nalanda_monk_nobg.png",
+    "mechanic": "【经文诵读】每回合为 1 名友军施加「专注(1)」（下次攻击伤害 +10）。",
+    "intents": [
+      "金刚杵击 → 造成 20 点伤害",
+      "经文诵读 → 为 1 名友军施加专注(1)",
+      "冥想 → 恢复 20 HP + 获得 15 层防火墙"
+    ],
+    "logic": "辅助型，持续为友军增强。冥想时是输出窗口。"
+  },
+  {
+    "name": "飞天舞者",
+    "nameEn": "Flying Dancer",
+    "type": "普通",
+    "stage": 2,
+    "hp": "110 — 130",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_flying_dancer_nobg.png",
+    "mechanic": "【天舞】每回合在「攻击姿态」和「防御姿态」间切换。攻击姿态伤害 +50%，防御姿态受伤 -30%。",
+    "intents": [
+      "天舞·攻 → 造成 30 点伤害（攻击姿态）",
+      "天舞·守 → 获得 25 层防火墙（防御姿态）",
+      "旋转飞踢 → 造成 18×2 点伤害"
+    ],
+    "logic": "姿态切换型。攻击姿态回合需要高防御，防御姿态回合适合输出。"
+  },
+  {
+    "name": "哈里发卫兵",
+    "nameEn": "Caliph Guard",
+    "type": "普通",
+    "stage": 2,
+    "hp": "160 — 180",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_caliph_guard_nobg.png",
+    "mechanic": "【忠诚护卫】当场上有 Boss 或精英时，受到的伤害减少 20%。",
+    "intents": [
+      "弯刀斩击 → 造成 24 点伤害",
+      "护卫防御 → 获得 25 层防火墙",
+      "忠诚冲锋 → 造成 18×2 点伤害"
+    ],
+    "logic": "Boss 战中的护卫型小兵。有 Boss 在场时减伤 20%，建议先击杀。"
+  },
+  {
+    "name": "阿拉伯炼金术士",
+    "nameEn": "Arab Alchemist",
+    "type": "普通",
+    "stage": 2,
+    "hp": "120 — 140",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_arab_alchemist_nobg.png",
+    "mechanic": "【炼金术】每 2 回合将 1 种 Debuff 转化为对应 Buff（中毒→恢复，迟缓→加速，装甲降解→强化）。",
+    "intents": [
+      "酸液投掷 → 造成 18 点伤害 + 施加「装甲降解(1)」",
+      "炼金转化 → 将自身 1 种 Debuff 转化为 Buff",
+      "爆炸药剂 → 造成 25 点伤害"
+    ],
+    "logic": "Debuff 免疫型。对其施加 Debuff 反而会被转化为 Buff。建议用纯伤害击杀。"
+  },
+  {
+    "name": "柏柏尔骑兵",
+    "nameEn": "Berber Cavalry",
+    "type": "普通",
+    "stage": 2,
+    "hp": "150 — 170",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_berber_cavalry_nobg.png",
+    "mechanic": "【沙漠疾风】首回合行动 2 次。",
+    "intents": [
+      "弯刀突袭 → 造成 22 点伤害",
+      "沙暴冲锋 → 造成 15×2 点伤害",
+      "游击撤退 → 获得 20 层防火墙 + 下回合行动 2 次"
+    ],
+    "logic": "首回合双动极具威胁。游击撤退后再次双动。建议首回合全力防御。"
+  },
+  {
+    "name": "阿拔斯学者精英",
+    "nameEn": "Abbasid Scholar Elite",
+    "type": "精英",
+    "stage": 2,
+    "hp": "500 — 550",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_abbasid_scholar_elite_nobg.png",
+    "mechanic": "【智慧之屋】每回合「研究」玩家卡组，3 回合后获得「全知」：可以预判并反制玩家的出牌。\n【代数之力】攻击伤害 = 基础伤害 × (1 + 已研究回合数 × 0.2)。",
+    "intents": [
+      "代数计算 → 造成 25 点伤害（随研究回合递增）",
+      "知识封印 → 封锁玩家费用最高的手牌 1 回合",
+      "全知反制（3 回合后）→ 预判玩家出牌并提前防御 + 造成 30 点伤害",
+      "学术护盾 → 获得 40 层防火墙"
+    ],
+    "logic": "研究型精英。3 回合内击杀可避免全知状态。越拖越强。"
+  },
+  {
+    "name": "花拉子密·代数之父",
+    "nameEn": "Al-Khwarizmi",
+    "type": "Boss",
+    "stage": 2,
+    "hp": "2200",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_khwarizmi_boss_nobg.png",
+    "mechanic": "【算法之父】每回合对玩家施加 1 道「方程式」：玩家必须在下回合打出特定费用的牌来「解方程」，否则受到 30 点真实伤害。\n【代数变换】每 3 回合将玩家所有手牌费用随机重新分配。\n【零的发现】HP < 30% 时，花拉子密将自身攻击力设为「0」但每回合对玩家施加 2 道方程式。",
+    "intents": [
+      "方程式 → 施加 1 道方程（下回合需打出指定费用牌解除）",
+      "代数变换 → 随机重分配玩家手牌费用",
+      "零之打击 → 造成 35 点伤害",
+      "算法优化 → 获得 35 层防火墙 + 恢复 60 HP"
+    ],
+    "logic": "方程式机制要求玩家保持费用多样性。代数变换打乱费用规划。低血量阶段方程式翻倍但不再直接攻击。"
+  },
+  {
+    "name": "唐朝禁卫",
+    "nameEn": "Tang Imperial Guard",
+    "type": "普通",
+    "stage": 2,
+    "hp": "170 — 190",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_tang_guard_nobg.png",
+    "mechanic": "【禁卫之誓】当场上有其他唐军时，攻击力 +5。",
+    "intents": [
+      "横刀斩击 → 造成 26 点伤害",
+      "禁卫防御 → 获得 28 层防火墙",
+      "协同突击 → 造成 18 点伤害（每个友军 +5）"
+    ],
+    "logic": "联动型前排。与其他唐军配合时伤害可观。"
+  },
+  {
+    "name": "长安道士",
+    "nameEn": "Chang'an Taoist",
+    "type": "普通",
+    "stage": 2,
+    "hp": "130 — 150",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_changan_taoist_nobg.png",
+    "mechanic": "【符咒】每 2 回合释放符咒，随机效果（伤害/恢复/Debuff）。",
+    "intents": [
+      "雷符 → 造成 28 点伤害",
+      "治愈符 → 恢复 1 名友军 25 HP",
+      "封印符 → 封锁玩家 1 张手牌 1 回合"
+    ],
+    "logic": "随机效果型。雷符伤害高，治愈符恢复友军，封印符干扰出牌。"
+  },
+  {
+    "name": "安禄山叛军",
+    "nameEn": "An Lushan Rebel",
+    "type": "普通",
+    "stage": 2,
+    "hp": "155 — 175",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_anlushan_rebel_nobg.png",
+    "mechanic": "【叛乱】每击杀 1 名友军，叛军获得「狂暴(2)」（攻击力 +6）。",
+    "intents": [
+      "叛军冲锋 → 造成 24 点伤害",
+      "掠夺 → 造成 18 点伤害 + 偷取玩家 1 点算力",
+      "狂暴突击 → 造成 20×2 点伤害"
+    ],
+    "logic": "击杀友军后变强。掠夺偷取算力很烦人。建议最后击杀。"
+  },
+  {
+    "name": "魏征·直言宰相",
+    "nameEn": "Wei Zheng",
+    "type": "精英",
+    "stage": 2,
+    "hp": "520 — 570",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_weizheng_elite_nobg.png",
+    "mechanic": "【直谏】每回合「谏言」玩家：若玩家上回合打出超过 3 张牌，魏征获得「义愤(2)」（攻击力 +6）。\n【铁面无私】免疫所有控制类 Debuff（迟缓、封锁等）。",
+    "intents": [
+      "直谏之怒 → 造成 30 点伤害（义愤状态下 +12）",
+      "铁面防御 → 获得 45 层防火墙",
+      "谏书 → 限制玩家下回合最多出 2 张牌",
+      "正气斩 → 造成 22×2 点伤害"
+    ],
+    "logic": "限制玩家出牌数量。每回合出牌不超过 3 张可避免触发义愤。谏书直接限制出牌上限。"
+  },
+  {
+    "name": "李白·诗仙剑客",
+    "nameEn": "Li Bai",
+    "type": "Boss",
+    "stage": 2,
+    "hp": "2500",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_libai_boss_nobg.png",
+    "mechanic": "【诗酒剑仙】李白有「醉意值」（0-100）。每回合 +20。醉意 > 50 时攻击力翻倍但命中率降低（30% 几率 Miss）。醉意 = 100 时进入「醉仙」状态：攻击力三倍但每回合自伤 30。\n【剑气纵横】每 3 回合释放剑气，对玩家造成 3 次随机伤害（15-30 每次）。",
+    "intents": [
+      "醉剑 → 造成 30 点伤害（醉意 > 50 时 60，30% Miss）",
+      "剑气纵横 → 造成 15-30 × 3 点随机伤害",
+      "饮酒 → 醉意 +30 + 恢复 40 HP",
+      "醉仙狂舞（醉意 100）→ 造成 45×2 点伤害 + 自伤 30"
+    ],
+    "logic": "醉意系统是核心。低醉意时稳定但伤害一般；高醉意时伤害极高但有 Miss 几率和自伤。建议在其高醉意时叠防御等待 Miss 和自伤。"
+  },
+  {
+    "name": "维京战士",
+    "nameEn": "Viking Warrior",
+    "type": "普通",
+    "stage": 2,
+    "hp": "165 — 185",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_viking_warrior_nobg.png",
+    "mechanic": "【狂战士】HP < 50% 时攻击力 +8。",
+    "intents": [
+      "战斧劈砍 → 造成 26 点伤害",
+      "狂战士冲锋 → 造成 20×2 点伤害（HP < 50% 时 28×2）",
+      "北欧坚韧 → 获得 20 层防火墙 + 恢复 10 HP"
+    ],
+    "logic": "低血量狂战士模式伤害极高。建议一波击杀避免进入狂战士状态。"
+  },
+  {
+    "name": "法兰克骑士",
+    "nameEn": "Frankish Knight",
+    "type": "普通",
+    "stage": 2,
+    "hp": "175 — 195",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_frank_knight_nobg.png",
+    "mechanic": "【重甲冲锋】首回合获得 20 层防火墙 + 冲锋伤害翻倍。",
+    "intents": [
+      "骑枪冲锋 → 造成 28 点伤害（首回合 56）",
+      "重剑横扫 → 造成 18×2 点伤害",
+      "铁壁 → 获得 30 层防火墙"
+    ],
+    "logic": "首回合冲锋伤害极高（56 点）。之后以重剑和铁壁交替。"
+  },
+  {
+    "name": "斯拉夫战士",
+    "nameEn": "Slavic Warrior",
+    "type": "普通",
+    "stage": 2,
+    "hp": "155 — 175",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_slavic_warrior_nobg.png",
+    "mechanic": "【森林伏击】每 3 回合进入「伏击」状态，下回合攻击伤害 +50% 且无法被反击。",
+    "intents": [
+      "斧击 → 造成 24 点伤害",
+      "森林伏击 → 进入伏击状态（下回合伤害 +50%）",
+      "伏击突袭 → 造成 36 点伤害（伏击状态）"
+    ],
+    "logic": "伏击循环型。伏击回合需要高防御。"
+  },
+  {
+    "name": "教会骑士精英",
+    "nameEn": "Church Knight Elite",
+    "type": "精英",
+    "stage": 2,
+    "hp": "560 — 610",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_church_knight_elite_nobg.png",
+    "mechanic": "【神圣审判】每 3 回合释放「审判」：若玩家身上有任何 Debuff，造成 40 点真实伤害。\n【信仰之盾】每回合获得 15 层防火墙。",
+    "intents": [
+      "圣剑斩击 → 造成 32 点伤害",
+      "神圣审判（每 3 回合）→ 若玩家有 Debuff 则造成 40 点真实伤害",
+      "信仰防御 → 获得 35 层防火墙 + 清除自身 1 种 Debuff",
+      "圣光治愈 → 恢复 50 HP"
+    ],
+    "logic": "审判机制惩罚带 Debuff 的玩家。建议在审判前清除自身 Debuff。信仰之盾使其持续获得防火墙。"
+  },
+  {
+    "name": "查理曼之影",
+    "nameEn": "Shadow of Charlemagne",
+    "type": "Boss",
+    "stage": 2,
+    "hp": "2800",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_charlemagne_boss_nobg.png",
+    "mechanic": "【神圣罗马帝国】战斗开始时召唤 1 名法兰克骑士和 1 名教会骑士。查理曼在场时所有友军获得「神圣(1)」（受到的伤害减少 5）。\n【加冕典礼】每 4 回合「加冕」：获得 50 层防火墙 + 强化(3) + 清除所有 Debuff。\n【帝国分裂】HP < 25% 时分裂为 3 个「继承者」（各 300 HP），必须同时击杀否则存活者恢复至满血。",
+    "intents": [
+      "帝王之剑 → 造成 35 点伤害 + 施加「恐惧(1)」",
+      "加冕典礼 → 获得 50 层防火墙 + 强化(3) + 清除 Debuff",
+      "召唤骑士 → 召唤 1 名法兰克骑士",
+      "帝国分裂（HP < 25%）→ 分裂为 3 个继承者（各 300 HP）"
+    ],
+    "logic": "前期需要清理召唤的骑士。加冕典礼的强化极其危险。低血量分裂机制要求 AOE 或同时击杀能力。"
+  },
+  {
+    "name": "巴格达商人",
+    "nameEn": "Baghdad Merchant",
+    "type": "普通",
+    "stage": 2,
+    "hp": "100 — 120",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_baghdad_merchant_nobg.png",
+    "mechanic": "【贸易】每回合获得 1 枚「金币」。消耗金币可强化攻击或购买防御。",
+    "intents": [
+      "商业投资 → 消耗 2 金币，获得强化(2)",
+      "雇佣保镖 → 消耗 3 金币，召唤 1 名哈里发卫兵",
+      "金币投掷 → 造成 15 点伤害 + 获得 1 金币"
+    ],
+    "logic": "积攒金币后爆发。建议在其积攒足够金币前击杀。"
+  },
+  {
+    "name": "草原萨满",
+    "nameEn": "Steppe Shaman",
+    "type": "普通",
+    "stage": 2,
+    "hp": "125 — 145",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_steppe_shaman_nobg.png",
+    "mechanic": "【通灵】每 2 回合召唤 1 个灵体（HP 30，每回合造成 8 点伤害）。",
+    "intents": [
+      "灵魂冲击 → 造成 22 点伤害",
+      "召唤灵体 → 召唤 1 个灵体",
+      "灵魂治愈 → 恢复 1 名友军 20 HP"
+    ],
+    "logic": "召唤型辅助。灵体积累后伤害可观。建议优先清理灵体。"
+  },
+  {
+    "name": "游牧骑兵",
+    "nameEn": "Nomad Cavalry",
+    "type": "普通",
+    "stage": 2,
+    "hp": "150 — 170",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_nomad_cavalry_nobg.png",
+    "mechanic": "【游牧战术】每 2 回合切换「进攻」和「撤退」状态。进攻时伤害 +30%，撤退时获得防火墙。",
+    "intents": [
+      "弯弓射击 → 造成 22 点伤害（进攻时 29）",
+      "游牧冲锋 → 造成 16×2 点伤害",
+      "战术撤退 → 获得 25 层防火墙"
+    ],
+    "logic": "进攻/撤退交替。进攻回合威胁大，撤退回合是输出窗口。"
+  },
+  {
+    "name": "游牧精英",
+    "nameEn": "Nomad Elite",
+    "type": "精英",
+    "stage": 2,
+    "hp": "480 — 530",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_nomad_elite_nobg.png",
+    "mechanic": "【草原之王】场上每有 1 名游牧单位，攻击力 +5。\n【骑射大师】攻击后有 40% 几率立即再攻击一次（伤害减半）。",
+    "intents": [
+      "精准骑射 → 造成 30 点伤害（40% 几率追加 15）",
+      "草原风暴 → 造成 20×2 点伤害",
+      "号令草原 → 所有友军获得强化(1) + 自身获得 20 层防火墙"
+    ],
+    "logic": "联动型精英。场上游牧单位越多越强。骑射大师的追击使其输出不稳定但上限高。"
+  },
+  {
+    "name": "留里克之影",
+    "nameEn": "Shadow of Rurik",
+    "type": "Boss",
+    "stage": 2,
+    "hp": "2400",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s2_rurik_boss_nobg.png",
+    "mechanic": "【瓦良格征服】战斗开始时召唤 2 名维京战士。留里克每击杀 1 名自己的士兵可恢复 200 HP（牺牲机制）。\n【北方之王】每 3 回合释放「冰霜风暴」：对玩家造成 25 点伤害 + 施加「冰冻(2)」（下回合少抽 2 张牌）。",
+    "intents": [
+      "北方之斧 → 造成 32 点伤害",
+      "冰霜风暴 → 造成 25 点伤害 + 施加冰冻(2)",
+      "牺牲士兵 → 击杀 1 名友军恢复 200 HP",
+      "召唤维京 → 召唤 1 名维京战士"
+    ],
+    "logic": "牺牲机制使其在有小兵时持续恢复。建议先清理小兵再攻击 Boss，但注意清理小兵会触发叛军的狂暴效果。"
+  },
+  {
+    "name": "马穆鲁克战士",
+    "nameEn": "Mamluk Warrior",
+    "type": "普通",
+    "stage": 3,
+    "hp": "220 — 240",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_mamluk_warrior_nobg.png",
+    "mechanic": "【奴隶兵团】与其他马穆鲁克同时在场时，双方攻击力 +5。",
+    "intents": [
+      "弯刀连斩 → 造成 28 点伤害",
+      "盾击 → 造成 18 点伤害 + 施加「迟缓(1)」",
+      "军团防御 → 获得 30 层防火墙"
+    ],
+    "logic": "联动型前排。多个马穆鲁克同时在场时攻击力叠加。"
+  },
+  {
+    "name": "刺客",
+    "nameEn": "Hashashin",
+    "type": "普通",
+    "stage": 3,
+    "hp": "180 — 200",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_hashashin_nobg.png",
+    "mechanic": "【暗杀】首回合隐身，第 2 回合从隐身中攻击造成 3 倍伤害。之后每 3 回合重新隐身。",
+    "intents": [
+      "暗杀突袭 → 造成 20 点伤害（隐身后 60）",
+      "毒刃 → 造成 15 点伤害 + 施加「剧毒(3)(3)」",
+      "消失 → 进入隐身（下回合攻击 3 倍伤害）"
+    ],
+    "logic": "隐身-暗杀循环。暗杀伤害极高（60 点）。隐身回合无法被攻击。建议在其现身时集中输出。"
+  },
+  {
+    "name": "十字军圣殿骑士",
+    "nameEn": "Crusader Templar",
+    "type": "普通",
+    "stage": 3,
+    "hp": "260 — 280",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_crusader_templar_nobg.png",
+    "mechanic": "【圣战誓言】每回合获得 10 层防火墙。HP < 50% 时防火墙获取翻倍。",
+    "intents": [
+      "圣剑审判 → 造成 30 点伤害",
+      "圣盾防御 → 获得 35 层防火墙",
+      "十字军冲锋 → 造成 22×2 点伤害"
+    ],
+    "logic": "高防御型。持续获得防火墙使其越来越难击杀。建议用穿甲攻击或快速爆发。"
+  },
+  {
+    "name": "沙漠精灵",
+    "nameEn": "Desert Djinn",
+    "type": "普通",
+    "stage": 3,
+    "hp": "200 — 220",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_desert_djinn_nobg.png",
+    "mechanic": "【许愿】每 3 回合「许愿」：随机获得 1 个强力效果（攻击力翻倍/恢复 50% HP/召唤 2 个分身）。",
+    "intents": [
+      "沙暴打击 → 造成 25 点伤害",
+      "许愿（每 3 回合）→ 随机强力效果",
+      "幻影分身 → 召唤 1 个分身（HP 60，攻击 12）",
+      "沙漠之风 → 造成 15×2 点伤害 + 施加「沙蚀(2)」"
+    ],
+    "logic": "许愿的随机性使其不可预测。建议在许愿前击杀或准备应对最坏情况。"
+  },
+  {
+    "name": "狂热者精英",
+    "nameEn": "Zealot Elite",
+    "type": "精英",
+    "stage": 3,
+    "hp": "700 — 760",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_zealot_elite_nobg.png",
+    "mechanic": "【圣战狂热】每受到 1 次攻击，获得 1 层「狂热」。每层狂热使攻击力 +3。\n【殉道】HP 归零时爆炸，造成 狂热层数 × 5 的真实伤害。",
+    "intents": [
+      "狂热斩击 → 造成 30 点伤害（+狂热层数×3）",
+      "圣战冲锋 → 造成 22×2 点伤害",
+      "狂热防御 → 获得 40 层防火墙 + 狂热 +3",
+      "殉道爆炸（死亡时）→ 造成 狂热×5 真实伤害"
+    ],
+    "logic": "攻击次数越多越强。建议用少次高伤攻击减少狂热积累。殉道爆炸需要在击杀前准备足够防御。"
+  },
+  {
+    "name": "萨拉丁之影",
+    "nameEn": "Shadow of Saladin",
+    "type": "Boss",
+    "stage": 3,
+    "hp": "3500",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_saladin_boss_nobg.png",
+    "mechanic": "【圣城守护者】战斗开始时部署 3 层「城墙」（每层 200 HP）。玩家必须先打破城墙才能攻击萨拉丁本体。\n【骑士精神】萨拉丁不会攻击 HP < 20% 的玩家（给予 1 回合喘息），但会利用这个回合强化自身。\n【统一圣战】每 4 回合号令所有友军同时攻击。",
+    "intents": [
+      "弯刀风暴 → 造成 35 点伤害",
+      "城墙重建 → 恢复 1 层城墙（200 HP）",
+      "骑士之礼（玩家 HP < 20%）→ 不攻击，自身获得强化(3)",
+      "统一圣战 → 所有友军同时攻击 + 萨拉丁造成 40 点伤害"
+    ],
+    "logic": "城墙机制使前期需要大量输出破墙。骑士精神给予低血量喘息但萨拉丁会趁机强化。统一圣战的群体攻击需要高防御。"
+  },
+  {
+    "name": "蒙古骑射手",
+    "nameEn": "Mongol Horse Archer",
+    "type": "普通",
+    "stage": 3,
+    "hp": "210 — 230",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_mongol_horse_archer_nobg.png",
+    "mechanic": "【骑射】攻击后自动获得 8 层防火墙（边打边跑）。",
+    "intents": [
+      "骑射 → 造成 24 点伤害 + 获得 8 层防火墙",
+      "箭雨 → 造成 12×3 点伤害",
+      "战术撤退 → 获得 25 层防火墙 + 下回合攻击力 +8"
+    ],
+    "logic": "攻防一体型。每次攻击都附带防火墙。需要持续输出压制。"
+  },
+  {
+    "name": "蒙古攻城工程师",
+    "nameEn": "Mongol Siege Engineer",
+    "type": "普通",
+    "stage": 3,
+    "hp": "250 — 270",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_mongol_siege_engineer_nobg.png",
+    "mechanic": "【攻城器械】每 2 回合部署 1 台攻城器械（投石车：每回合 15 点伤害 / 云梯：使所有友军攻击力 +5）。场上最多 2 台。",
+    "intents": [
+      "部署投石车 → 部署投石车（每回合 15 点伤害）",
+      "部署云梯 → 部署云梯（所有友军攻击力 +5）",
+      "工程锤击 → 造成 22 点伤害",
+      "修理 → 恢复 1 台器械 50 HP"
+    ],
+    "logic": "器械积累后威胁极大。建议优先摧毁器械。"
+  },
+  {
+    "name": "蒙古萨满",
+    "nameEn": "Mongol Shaman",
+    "type": "普通",
+    "stage": 3,
+    "hp": "190 — 210",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_mongol_shaman_nobg.png",
+    "mechanic": "【长生天之力】每 2 回合为 1 名友军施加「天佑」：下次受到致命伤害时以 1 HP 存活。",
+    "intents": [
+      "雷霆召唤 → 造成 28 点伤害",
+      "天佑祝福 → 为 1 名友军施加天佑（免死 1 次）",
+      "灵魂治愈 → 恢复 1 名友军 35 HP",
+      "风暴之怒 → 造成 18×2 点伤害"
+    ],
+    "logic": "天佑使友军免死一次，极其烦人。建议最优先击杀萨满。"
+  },
+  {
+    "name": "怯薛精英",
+    "nameEn": "Keshig Elite",
+    "type": "精英",
+    "stage": 3,
+    "hp": "750 — 820",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_keshig_elite_nobg.png",
+    "mechanic": "【大汗护卫】当场上有 Boss 时，怯薛精英代替 Boss 承受 50% 伤害。\n【精锐骑射】攻击后有 50% 几率追加 1 次攻击（伤害减半）。",
+    "intents": [
+      "怯薛突击 → 造成 35 点伤害（50% 追加 18）",
+      "护卫冲锋 → 造成 25×2 点伤害",
+      "铁壁防御 → 获得 50 层防火墙",
+      "号角召唤 → 召唤 1 名蒙古骑射手"
+    ],
+    "logic": "Boss 战中的护卫。代替 Boss 承受 50% 伤害使其成为必须优先击杀的目标。"
+  },
+  {
+    "name": "成吉思汗之影",
+    "nameEn": "Shadow of Genghis Khan",
+    "type": "Boss",
+    "stage": 3,
+    "hp": "4000",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_genghis_boss_nobg.png",
+    "mechanic": "【天罚】每 3 回合释放「天罚」：对玩家造成 场上蒙古单位数 × 15 的伤害。\n【蒙古铁骑】战斗开始时召唤 2 名蒙古骑射手。每当 1 名蒙古单位被击杀，成吉思汗获得「复仇(2)」（攻击力 +6）。\n【征服者】每击败 1 名蒙古单位，成吉思汗永久获得该单位的 1 个技能。",
+    "intents": [
+      "天罚 → 造成 蒙古单位数×15 点伤害",
+      "征服之弓 → 造成 40 点伤害",
+      "铁骑冲锋 → 造成 25×2 点伤害 + 施加「践踏(1)」",
+      "召唤骑兵 → 召唤 1 名蒙古骑射手"
+    ],
+    "logic": "天罚伤害与场上蒙古单位数成正比。清理小兵会触发复仇和征服。建议在天罚前清理部分小兵，但保留 1-2 个以控制复仇层数。"
+  },
+  {
+    "name": "宋弩手",
+    "nameEn": "Song Crossbowman",
+    "type": "普通",
+    "stage": 3,
+    "hp": "200 — 220",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_song_crossbowman_nobg.png",
+    "mechanic": "【神臂弓】每 3 回合发射一次穿甲弩箭（无视 50% 防火墙）。",
+    "intents": [
+      "弩箭射击 → 造成 22 点伤害",
+      "神臂弓（每 3 回合）→ 造成 35 点伤害（无视 50% 防火墙）",
+      "装填防御 → 获得 20 层防火墙"
+    ],
+    "logic": "神臂弓穿甲是主要威胁。装填回合是输出窗口。"
+  },
+  {
+    "name": "火枪手",
+    "nameEn": "Song Fire Lancer",
+    "type": "普通",
+    "stage": 3,
+    "hp": "190 — 210",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_song_fire_lancer_nobg.png",
+    "mechanic": "【突火枪】攻击有 40% 几率附加「燃烧(3)(2)」。攻击后自身获得「过热(1)」（下回合攻击力 -5）。",
+    "intents": [
+      "突火枪射击 → 造成 30 点伤害 + 40% 燃烧(3)(2)",
+      "火药爆破 → 造成 20×2 点伤害 + 自身过热",
+      "冷却 → 清除过热 + 获得 15 层防火墙"
+    ],
+    "logic": "高伤害但有过热惩罚。过热回合攻击力降低是输出窗口。"
+  },
+  {
+    "name": "元代摔跤手",
+    "nameEn": "Yuan Wrestler",
+    "type": "普通",
+    "stage": 3,
+    "hp": "270 — 290",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_yuan_wrestler_nobg.png",
+    "mechanic": "【摔跤】攻击时有 30% 几率「摔倒」玩家：下回合少抽 1 张牌。",
+    "intents": [
+      "蒙古摔跤 → 造成 25 点伤害 + 30% 摔倒",
+      "熊抱 → 造成 20 点伤害 + 施加「迟缓(2)」",
+      "铁山靠 → 造成 35 点伤害 + 获得 15 层防火墙"
+    ],
+    "logic": "高 HP 肉盾型。摔倒和迟缓持续干扰玩家。"
+  },
+  {
+    "name": "武林高手精英",
+    "nameEn": "Wulin Master Elite",
+    "type": "精英",
+    "stage": 3,
+    "hp": "720 — 780",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_wulin_master_elite_nobg.png",
+    "mechanic": "【内功】每回合积累 1 层「内力」。消耗内力释放绝招：3 层 = 掌风（30 伤害），5 层 = 剑气（50 伤害），8 层 = 降龙掌（80 伤害 + 击退）。\n【轻功】每 3 回合闪避 1 次攻击。",
+    "intents": [
+      "内力积累 → 积累 1 层内力 + 造成 20 点伤害",
+      "掌风（3 内力）→ 造成 30 点伤害",
+      "剑气纵横（5 内力）→ 造成 50 点伤害",
+      "降龙十八掌（8 内力）→ 造成 80 点伤害 + 施加「击退(2)」"
+    ],
+    "logic": "内力积累型。越拖越强。降龙掌 80 点伤害极其致命。建议在其积累到 8 层前击杀。轻功闪避需要多段攻击应对。"
+  },
+  {
+    "name": "忽必烈之影",
+    "nameEn": "Shadow of Kublai Khan",
+    "type": "Boss",
+    "stage": 3,
+    "hp": "4200",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_kublai_boss_nobg.png",
+    "mechanic": "【元朝一统】战斗分 3 阶段：征服（HP > 60%）、统治（30-60%）、衰亡（< 30%）。每阶段行为模式不同。\n【大都皇宫】征服阶段每回合召唤 1 名元代摔跤手；统治阶段每回合恢复 50 HP + 获得 30 层防火墙；衰亡阶段攻击力翻倍但每回合自伤 20。\n【忽必烈之怒】每 4 回合释放「蒙古铁蹄」：造成 45 点伤害 + 摧毁玩家所有防火墙。",
+    "intents": [
+      "蒙古铁蹄 → 造成 45 点伤害 + 摧毁玩家所有防火墙",
+      "帝王之拳 → 造成 38 点伤害",
+      "召唤摔跤手（征服阶段）→ 召唤 1 名元代摔跤手",
+      "皇宫防御（统治阶段）→ 恢复 50 HP + 获得 30 层防火墙"
+    ],
+    "logic": "三阶段 Boss。征服阶段需要处理召唤的小兵；统治阶段恢复力强需要高爆发；衰亡阶段伤害极高但会自伤。蒙古铁蹄摧毁防火墙后需要立即重建。"
+  },
+  {
+    "name": "瘟疫鼠群",
+    "nameEn": "Plague Rats",
+    "type": "普通",
+    "stage": 3,
+    "hp": "150 — 170",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_plague_rat_nobg.png",
+    "mechanic": "【瘟疫携带】攻击必定施加「瘟疫(1)(3)」。被击杀时向牌库塞入 1 张「感染」废牌。",
+    "intents": [
+      "鼠群啃咬 → 造成 15 点伤害 + 施加瘟疫(1)(3)",
+      "鼠潮 → 造成 8×4 点伤害",
+      "繁殖 → 召唤 1 个鼠群分身（HP 50）"
+    ],
+    "logic": "瘟疫持续消耗型。被击杀后的感染废牌也是威胁。建议用 AOE 一次性清理。"
+  },
+  {
+    "name": "苦修者",
+    "nameEn": "Flagellant",
+    "type": "普通",
+    "stage": 3,
+    "hp": "200 — 220",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_flagellant_nobg.png",
+    "mechanic": "【苦修】每回合自伤 10 HP，但攻击力永久 +4。HP < 30% 时进入「狂信」：攻击力再翻倍。",
+    "intents": [
+      "苦修之鞭 → 造成 25 点伤害（随回合递增）",
+      "狂信冲锋 → 造成 20×2 点伤害",
+      "赎罪 → 自伤 20 + 攻击力 +8"
+    ],
+    "logic": "自伤换攻击力，越拖越强。狂信状态极其危险。建议快速击杀。"
+  },
+  {
+    "name": "瘟疫医生",
+    "nameEn": "Plague Doctor",
+    "type": "普通",
+    "stage": 3,
+    "hp": "230 — 250",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_plague_doctor_nobg.png",
+    "mechanic": "【瘟疫治疗】每回合为 1 名友军清除 Debuff。同时对玩家施加「瘟疫(2)(2)」。",
+    "intents": [
+      "放血疗法 → 造成 22 点伤害 + 施加瘟疫(2)(2)",
+      "草药治疗 → 为 1 名友军恢复 30 HP + 清除 Debuff",
+      "瘟疫面具 → 获得 25 层防火墙 + 免疫瘟疫"
+    ],
+    "logic": "辅助型。持续为友军清 Debuff 并对玩家施加瘟疫。建议优先击杀。"
+  },
+  {
+    "name": "死亡骑士",
+    "nameEn": "Death Knight",
+    "type": "普通",
+    "stage": 3,
+    "hp": "280 — 300",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_death_knight_nobg.png",
+    "mechanic": "【死亡之触】攻击施加「死亡标记」：3 回合后若未清除，造成 50 点真实伤害。",
+    "intents": [
+      "死亡之刃 → 造成 30 点伤害 + 施加死亡标记",
+      "亡灵冲锋 → 造成 22×2 点伤害",
+      "死亡护甲 → 获得 35 层防火墙 + 恢复 20 HP"
+    ],
+    "logic": "死亡标记是核心威胁。3 回合内必须清除否则 50 点真实伤害。建议携带 Debuff 清除手段。"
+  },
+  {
+    "name": "审判官精英",
+    "nameEn": "Inquisitor Elite",
+    "type": "精英",
+    "stage": 3,
+    "hp": "780 — 850",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_inquisitor_elite_nobg.png",
+    "mechanic": "【异端审判】每 3 回合进行「审判」：检查玩家手牌，若有费用 > 3 的牌则「定罪」：该牌费用翻倍。\n【火刑柱】每 5 回合释放火刑：造成 60 点伤害 + 施加「燃烧(5)(3)」。",
+    "intents": [
+      "审判之锤 → 造成 35 点伤害",
+      "异端审判 → 检查手牌，费用 > 3 的牌费用翻倍",
+      "火刑柱（每 5 回合）→ 造成 60 点伤害 + 燃烧(5)(3)",
+      "信仰护盾 → 获得 50 层防火墙 + 清除自身 Debuff"
+    ],
+    "logic": "审判惩罚高费牌。建议携带低费卡组。火刑柱伤害极高需要提前准备防御。"
+  },
+  {
+    "name": "黑死病之影",
+    "nameEn": "Shadow of Black Death",
+    "type": "Boss",
+    "stage": 3,
+    "hp": "3800",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_plague_boss_nobg.png",
+    "mechanic": "【大瘟疫】战斗开始时对玩家施加「黑死病」：每回合失去 5 HP + 每回合向牌库塞入 1 张「感染」废牌。只有击败 Boss 才能解除。\n【瘟疫变异】每失去 1000 HP，瘟疫「变异」一次：黑死病效果加倍（5→10→20 HP/回合）。\n【死神之镰】HP < 20% 时每回合造成 50 点真实伤害。",
+    "intents": [
+      "瘟疫喷射 → 造成 30 点伤害 + 施加瘟疫(3)(3)",
+      "死亡之雾 → 造成 20 点伤害 + 向牌库塞入 2 张感染废牌",
+      "瘟疫变异（每失去 1000 HP）→ 黑死病效果加倍",
+      "死神之镰（HP < 20%）→ 造成 50 点真实伤害"
+    ],
+    "logic": "DPS 竞赛型 Boss。黑死病持续消耗玩家，变异使消耗加速。必须在瘟疫失控前击杀。低血量阶段的 50 点真实伤害要求快速收尾。"
+  },
+  {
+    "name": "雇佣兵",
+    "nameEn": "Condottiere",
+    "type": "普通",
+    "stage": 3,
+    "hp": "240 — 260",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_condottiere_nobg.png",
+    "mechanic": "【雇佣合同】每 3 回合「续约」：若场上有 Boss 或精英，获得强化(2)；否则有 30% 几率叛变（转为攻击其他敌人 1 回合）。",
+    "intents": [
+      "雇佣兵突刺 → 造成 28 点伤害",
+      "佣金防御 → 获得 25 层防火墙",
+      "叛变（30% 无 Boss 时）→ 攻击 1 名友军造成 25 点伤害"
+    ],
+    "logic": "有 Boss 时忠诚且持续强化；无 Boss 时可能叛变。可以利用叛变机制。"
+  },
+  {
+    "name": "炼金学者",
+    "nameEn": "Alchemist Scholar",
+    "type": "普通",
+    "stage": 3,
+    "hp": "200 — 220",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_alchemist_scholar_nobg.png",
+    "mechanic": "【贤者之石】每 4 回合尝试「炼金」：将自身 50 HP 转化为 30 层防火墙 + 强化(3)。",
+    "intents": [
+      "酸液投掷 → 造成 25 点伤害 + 施加装甲降解(1)",
+      "炼金术（每 4 回合）→ 自伤 50 + 获得 30 层防火墙 + 强化(3)",
+      "水银弹 → 造成 20×2 点伤害"
+    ],
+    "logic": "炼金术自伤换强化。炼金后攻击力大幅提升但 HP 降低。"
+  },
+  {
+    "name": "美第奇刺客",
+    "nameEn": "Medici Assassin",
+    "type": "普通",
+    "stage": 3,
+    "hp": "210 — 230",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_medici_assassin_nobg.png",
+    "mechanic": "【暗杀委托】每 3 回合对玩家施加「暗杀标记」：被标记的回合受到的伤害 +50%。",
+    "intents": [
+      "毒匕首 → 造成 22 点伤害 + 施加剧毒(2)(3)",
+      "暗杀标记 → 标记玩家（本回合受伤 +50%）",
+      "影遁 → 获得 20 层防火墙 + 进入隐身 1 回合"
+    ],
+    "logic": "暗杀标记使玩家在被标记回合极其脆弱。建议在标记回合全力防御。"
+  },
+  {
+    "name": "发条机器人",
+    "nameEn": "Clockwork Automaton",
+    "type": "普通",
+    "stage": 3,
+    "hp": "300 — 320",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_clockwork_automaton_nobg.png",
+    "mechanic": "【发条驱动】每回合消耗 1 层「发条」行动。战斗开始时有 5 层发条。发条耗尽则停机 2 回合后重新上满。",
+    "intents": [
+      "齿轮碾压 → 造成 35 点伤害（消耗 1 发条）",
+      "弹簧冲击 → 造成 22×2 点伤害（消耗 1 发条）",
+      "上发条 → 获得 5 层发条 + 30 层防火墙",
+      "停机（发条耗尽）→ 无法行动 2 回合"
+    ],
+    "logic": "发条系统使其有 5 回合活跃期和 2 回合停机期。停机期是输出窗口。"
+  },
+  {
+    "name": "文艺复兴精英",
+    "nameEn": "Renaissance Elite",
+    "type": "精英",
+    "stage": 3,
+    "hp": "800 — 870",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_renaissance_elite_nobg.png",
+    "mechanic": "【全才】每 2 回合切换「战士」「学者」「艺术家」三种形态。战士：攻击力 +50%；学者：每回合施加 1 种 Debuff；艺术家：每回合恢复 30 HP + 为友军增益。\n【灵感爆发】切换形态时有 20% 几率获得「灵感」：本形态持续 2 回合而非 1 回合。",
+    "intents": [
+      "战士·重剑 → 造成 40 点伤害",
+      "学者·知识封印 → 封锁玩家 1 张手牌 + 施加 Debuff",
+      "艺术家·灵感治愈 → 恢复 30 HP + 为友军施加强化(1)",
+      "全才防御 → 获得 45 层防火墙"
+    ],
+    "logic": "三形态循环。战士形态威胁最大，学者形态干扰最强，艺术家形态恢复最烦。建议在学者或艺术家形态集中输出。"
+  },
+  {
+    "name": "达芬奇之影",
+    "nameEn": "Shadow of Da Vinci",
+    "type": "Boss",
+    "stage": 3,
+    "hp": "4500",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s3_davinci_boss_nobg.png",
+    "mechanic": "【万能天才】达芬奇每 2 回合切换「发明家」「画家」「解剖学家」形态。\n发明家：部署机械装置（飞行器：每回合 15 点伤害；坦克：50 HP 护盾；弩炮：每回合 20 点穿甲伤害）。\n画家：将玩家 1 张手牌「重绘」为随机效果。\n解剖学家：精准攻击无视 50% 防火墙。\n【维特鲁威人】HP < 30% 时进入「完美形态」：同时拥有所有形态能力。",
+    "intents": [
+      "发明·部署装置 → 部署 1 台机械装置",
+      "画家·重绘 → 将玩家 1 张手牌效果随机化",
+      "解剖·精准打击 → 造成 40 点伤害（无视 50% 防火墙）",
+      "完美形态（HP < 30%）→ 同时使用所有形态能力"
+    ],
+    "logic": "三形态 Boss。发明家的装置积累后威胁极大，需要及时清理。画家的重绘干扰出牌策略。解剖学家的穿甲使防火墙效果减半。完美形态同时拥有所有能力，需要在此之前尽量削血。"
+  },
+  {
+    "name": "工厂工人",
+    "nameEn": "Factory Worker",
+    "type": "普通",
+    "stage": 4,
+    "hp": "280 — 300",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_factory_worker_nobg.png",
+    "mechanic": "【流水线】每回合行动模式固定循环：攻击→防御→攻击→强化→重复。",
+    "intents": [
+      "扳手打击 → 造成 30 点伤害",
+      "流水线防御 → 获得 30 层防火墙",
+      "蒸汽强化 → 获得强化(2) + 攻击力永久 +3"
+    ],
+    "logic": "固定循环可预判。强化回合是输出窗口。随着强化积累攻击力递增。"
+  },
+  {
+    "name": "蒸汽机器人",
+    "nameEn": "Steam Automaton",
+    "type": "普通",
+    "stage": 4,
+    "hp": "320 — 340",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_steam_automaton_nobg.png",
+    "mechanic": "【蒸汽压力】每回合积累 1 层「蒸汽压力」。3 层时释放蒸汽爆发（高伤害 + 清空压力）。",
+    "intents": [
+      "机械拳击 → 造成 28 点伤害 + 积累 1 层蒸汽",
+      "蒸汽爆发（3 层）→ 造成 50 点伤害 + 清空蒸汽",
+      "压力阀 → 获得 25 层防火墙 + 积累 1 层蒸汽",
+      "过载（5 层）→ 造成 70 点伤害 + 自伤 30 + 清空蒸汽"
+    ],
+    "logic": "蒸汽压力积累型。3 层爆发伤害高。若未及时释放到 5 层会过载（更高伤害但自伤）。"
+  },
+  {
+    "name": "煤炭魔像",
+    "nameEn": "Coal Golem",
+    "type": "普通",
+    "stage": 4,
+    "hp": "350 — 370",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_coal_golem_nobg.png",
+    "mechanic": "【燃烧核心】每回合自伤 8 HP 但攻击附带「燃烧(3)(2)」。HP < 30% 时核心过热，攻击力翻倍。",
+    "intents": [
+      "燃烧拳击 → 造成 32 点伤害 + 燃烧(3)(2)",
+      "煤炭投掷 → 造成 20×2 点伤害 + 燃烧(2)(2)",
+      "核心充能 → 恢复 40 HP + 获得 20 层防火墙"
+    ],
+    "logic": "持续自伤型。核心过热后伤害翻倍但也在快速自伤。可以选择等其自伤至死或快速击杀。"
+  },
+  {
+    "name": "工业家精英",
+    "nameEn": "Industrialist Elite",
+    "type": "精英",
+    "stage": 4,
+    "hp": "900 — 980",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_industrialist_elite_nobg.png",
+    "mechanic": "【资本积累】每回合获得 1 枚「资本」。消耗资本可执行强力行动：2 资本 = 雇佣工人（召唤）；3 资本 = 技术升级（全体强化）；5 资本 = 垄断（玩家本回合出牌费用 +1）。\n【剥削】场上每有 1 名工人类敌人，工业家每回合恢复 15 HP。",
+    "intents": [
+      "资本打击 → 造成 35 点伤害 + 获得 1 资本",
+      "雇佣工人（2 资本）→ 召唤 1 名工厂工人",
+      "技术升级（3 资本）→ 所有友军获得强化(2)",
+      "垄断（5 资本）→ 玩家本回合出牌费用 +1"
+    ],
+    "logic": "资本积累型。越拖越强。垄断极其致命。建议在其积累到 5 资本前击杀。"
+  },
+  {
+    "name": "瓦特之影",
+    "nameEn": "Shadow of Watt",
+    "type": "Boss",
+    "stage": 4,
+    "hp": "5000",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_watt_boss_nobg.png",
+    "mechanic": "【蒸汽革命】战斗场地有「蒸汽浓度」（0-100）。瓦特每回合 +15。蒸汽 > 50 时所有机械敌人攻击力 +30%；> 80 时玩家每回合受到 10 点环境伤害。\n【改良蒸汽机】每 3 回合「改良」1 次：永久提升蒸汽浓度增长速度（+5/回合）。\n【工业革命】HP < 25% 时召唤 3 台蒸汽机器人 + 蒸汽浓度直接设为 100。",
+    "intents": [
+      "蒸汽锤击 → 造成 40 点伤害",
+      "改良蒸汽机 → 永久提升蒸汽增长 +5/回合",
+      "蒸汽爆炸 → 消耗 30 蒸汽浓度造成 55 点伤害",
+      "工业革命（HP < 25%）→ 召唤 3 台蒸汽机器人 + 蒸汽浓度 = 100"
+    ],
+    "logic": "蒸汽浓度是核心机制。需要在浓度过高前击杀。改良使浓度增长加速。低血量的工业革命是最后一搏。"
+  },
+  {
+    "name": "无套裤汉",
+    "nameEn": "Sans-Culotte",
+    "type": "普通",
+    "stage": 4,
+    "hp": "260 — 280",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_sans_culotte_nobg.png",
+    "mechanic": "【革命热情】场上无套裤汉数量越多，所有无套裤汉攻击力越高（每个 +4）。",
+    "intents": [
+      "革命冲锋 → 造成 26 点伤害（+同伴数×4）",
+      "街垒防御 → 获得 28 层防火墙",
+      "高呼自由 → 所有友军获得强化(1)"
+    ],
+    "logic": "群体联动型。多个无套裤汉同时在场时攻击力叠加极快。建议逐个击破。"
+  },
+  {
+    "name": "断头台行刑人",
+    "nameEn": "Guillotine Executioner",
+    "type": "普通",
+    "stage": 4,
+    "hp": "300 — 320",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_guillotine_executioner_nobg.png",
+    "mechanic": "【处决】对 HP < 25% 的玩家造成 3 倍伤害。",
+    "intents": [
+      "断头台之刃 → 造成 32 点伤害（玩家 HP < 25% 时 96）",
+      "恐怖审判 → 造成 25 点伤害 + 施加「恐惧(2)」",
+      "磨刃 → 获得强化(3) + 获得 20 层防火墙"
+    ],
+    "logic": "处决机制使低血量极其危险。建议保持 HP > 25%。磨刃后攻击力大幅提升。"
+  },
+  {
+    "name": "雅各宾精英",
+    "nameEn": "Jacobin Elite",
+    "type": "精英",
+    "stage": 4,
+    "hp": "850 — 920",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_jacobin_elite_nobg.png",
+    "mechanic": "【恐怖统治】每 3 回合发动「恐怖统治」：随机移除玩家 1 张手牌（本局永久移除）。\n【革命法庭】每 4 回合「审判」玩家：若玩家手牌中有费用 > 2 的牌，施加「有罪」（下回合受到伤害 +50%）。",
+    "intents": [
+      "革命之刃 → 造成 38 点伤害",
+      "恐怖统治 → 永久移除玩家 1 张手牌",
+      "革命法庭 → 若有高费牌则施加「有罪」",
+      "革命防御 → 获得 45 层防火墙"
+    ],
+    "logic": "恐怖统治永久削弱卡组。革命法庭惩罚高费牌。建议快速击杀并携带低费卡组。"
+  },
+  {
+    "name": "罗伯斯庇尔之影",
+    "nameEn": "Shadow of Robespierre",
+    "type": "Boss",
+    "stage": 4,
+    "hp": "5200",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_robespierre_boss_nobg.png",
+    "mechanic": "【恐怖时代】战斗开始时场地进入「恐怖时代」：每回合随机 1 名敌人（包括罗伯斯庇尔的盟友）被「处决」（HP 减半）。罗伯斯庇尔自身免疫。\n【人民之友】每当 1 名友军被处决，罗伯斯庇尔获得「革命之力(3)」（攻击力 +9）。\n【热月政变】HP < 15% 时所有友军叛变，转而攻击罗伯斯庇尔。",
+    "intents": [
+      "断头台审判 → 造成 42 点伤害 + 施加恐惧(2)",
+      "恐怖法令 → 永久移除玩家 1 张手牌 + 获得 30 层防火墙",
+      "召唤革命群众 → 召唤 2 名无套裤汉",
+      "热月政变（HP < 15%）→ 所有友军叛变攻击罗伯斯庇尔"
+    ],
+    "logic": "恐怖时代自动处决友军使其不断获得革命之力。越拖越强。热月政变使低血量时友军反戈，可以利用这个机制。"
+  },
+  {
+    "name": "拿破仑掷弹兵",
+    "nameEn": "Napoleon Grenadier",
+    "type": "普通",
+    "stage": 4,
+    "hp": "290 — 310",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_napoleon_grenadier_nobg.png",
+    "mechanic": "【手榴弹】每 2 回合投掷手榴弹（AOE 伤害 + 燃烧）。",
+    "intents": [
+      "刺刀冲锋 → 造成 30 点伤害",
+      "手榴弹（每 2 回合）→ 造成 25 点伤害 + 燃烧(2)(2)",
+      "列阵防御 → 获得 30 层防火墙"
+    ],
+    "logic": "手榴弹的 AOE 和燃烧是主要威胁。列阵回合是输出窗口。"
+  },
+  {
+    "name": "拿破仑胸甲骑兵",
+    "nameEn": "Napoleon Cuirassier",
+    "type": "普通",
+    "stage": 4,
+    "hp": "310 — 330",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_napoleon_cuirassier_nobg.png",
+    "mechanic": "【重甲冲锋】首回合冲锋伤害翻倍。受到的伤害减少 5 点（最低 1）。",
+    "intents": [
+      "胸甲冲锋 → 造成 32 点伤害（首回合 64）",
+      "马刀横扫 → 造成 22×2 点伤害",
+      "重甲防御 → 获得 35 层防火墙"
+    ],
+    "logic": "首回合冲锋 64 点伤害极高。减伤 5 使其需要高伤害攻击。"
+  },
+  {
+    "name": "俄罗斯哥萨克",
+    "nameEn": "Russian Cossack",
+    "type": "普通",
+    "stage": 4,
+    "hp": "275 — 295",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_russian_cossack_nobg.png",
+    "mechanic": "【冬将军】每 3 回合释放「寒冬」：玩家下回合少抽 1 张牌 + 出牌费用 +1。",
+    "intents": [
+      "哥萨克骑枪 → 造成 28 点伤害",
+      "寒冬（每 3 回合）→ 玩家少抽 1 牌 + 费用 +1",
+      "游击战术 → 获得 25 层防火墙 + 攻击力 +5"
+    ],
+    "logic": "寒冬效果严重限制玩家行动。建议在寒冬回合前集中输出。"
+  },
+  {
+    "name": "元帅精英",
+    "nameEn": "Marshal Elite",
+    "type": "精英",
+    "stage": 4,
+    "hp": "950 — 1030",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_marshal_elite_nobg.png",
+    "mechanic": "【战术指挥】每回合为所有友军分配「战术」：进攻（攻击力 +8）、防御（获得 20 层防火墙）、或包围（下回合攻击无视 30% 防火墙）。\n【拿破仑战法】每 4 回合执行「炮兵齐射」：造成 50 点伤害。",
+    "intents": [
+      "战术指挥 → 为所有友军分配战术",
+      "元帅之剑 → 造成 38 点伤害",
+      "炮兵齐射（每 4 回合）→ 造成 50 点伤害",
+      "战略撤退 → 获得 50 层防火墙 + 恢复 40 HP"
+    ],
+    "logic": "战术指挥使所有友军持续增强。炮兵齐射伤害极高。建议优先击杀以削弱全队。"
+  },
+  {
+    "name": "拿破仑之影",
+    "nameEn": "Shadow of Napoleon",
+    "type": "Boss",
+    "stage": 4,
+    "hp": "5800",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_napoleon_boss_nobg.png",
+    "mechanic": "【战神】拿破仑有「士气值」（0-100）。每回合 +10。士气 > 50 时所有友军攻击力 +30%；士气 = 100 时释放「奥斯特里茨」：造成 80 点伤害 + 清空士气。\n【大陆封锁】每 4 回合「封锁」玩家 1 种类型的牌（攻击/技能/能力）1 回合。\n【滑铁卢】HP < 20% 时士气归零且无法再增长。攻击力减半但每回合恢复 80 HP。",
+    "intents": [
+      "拿破仑之剑 → 造成 45 点伤害",
+      "奥斯特里茨（士气 100）→ 造成 80 点伤害 + 清空士气",
+      "大陆封锁 → 封锁玩家 1 种牌类型 1 回合",
+      "滑铁卢（HP < 20%）→ 士气归零，攻击力减半，每回合恢复 80 HP"
+    ],
+    "logic": "士气系统是核心。奥斯特里茨 80 点伤害极其致命。大陆封锁限制出牌类型。滑铁卢阶段恢复力强但攻击力减半，需要高爆发突破恢复。"
+  },
+  {
+    "name": "联邦步枪兵",
+    "nameEn": "Union Rifleman",
+    "type": "普通",
+    "stage": 4,
+    "hp": "270 — 290",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_union_rifleman_nobg.png",
+    "mechanic": "【散兵线】与其他联邦士兵同时在场时，受到的 AOE 伤害减少 50%。",
+    "intents": [
+      "步枪射击 → 造成 28 点伤害",
+      "散兵射击 → 造成 18×2 点伤害",
+      "掩体防御 → 获得 30 层防火墙"
+    ],
+    "logic": "散兵线减少 AOE 伤害使其难以群体清理。建议逐个击破。"
+  },
+  {
+    "name": "南军骑兵",
+    "nameEn": "Confederate Cavalry",
+    "type": "普通",
+    "stage": 4,
+    "hp": "285 — 305",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_confederate_cavalry_nobg.png",
+    "mechanic": "【游击战】每 3 回合进入「游击」状态：免疫 1 次攻击 + 下回合攻击伤害 +50%。",
+    "intents": [
+      "马刀冲锋 → 造成 30 点伤害（游击后 45）",
+      "游击突袭 → 进入游击状态",
+      "左轮射击 → 造成 20×2 点伤害"
+    ],
+    "logic": "游击状态免疫 1 次攻击。建议用多段攻击破解免疫。"
+  },
+  {
+    "name": "加特林操作员",
+    "nameEn": "Gatling Operator",
+    "type": "普通",
+    "stage": 4,
+    "hp": "250 — 270",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_gatling_operator_nobg.png",
+    "mechanic": "【加特林】每回合攻击次数递增（第 1 回合 2 次，第 2 回合 3 次...最多 6 次）。每 4 回合需要「冷却」（无法攻击）。",
+    "intents": [
+      "加特林扫射 → 造成 10×N 点伤害（N 递增）",
+      "冷却（每 4 回合）→ 无法攻击 + 获得 20 层防火墙",
+      "弹药补给 → 获得 15 层防火墙 + 下回合攻击次数 +1"
+    ],
+    "logic": "攻击次数递增使其越来越强。冷却回合是输出窗口。"
+  },
+  {
+    "name": "铁甲舰精英",
+    "nameEn": "Ironclad Elite",
+    "type": "精英",
+    "stage": 4,
+    "hp": "1000 — 1080",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_ironclad_elite_nobg.png",
+    "mechanic": "【铁甲】受到的伤害减少 8 点（最低 1）。每回合自动获得 15 层防火墙。\n【舰炮】每 3 回合释放舰炮齐射（高伤害穿甲）。",
+    "intents": [
+      "舰炮射击 → 造成 40 点伤害",
+      "舰炮齐射（每 3 回合）→ 造成 30×2 点伤害（无视 50% 防火墙）",
+      "铁甲防御 → 获得 40 层防火墙",
+      "撞击 → 造成 50 点伤害 + 自伤 20"
+    ],
+    "logic": "高减伤 + 自动防火墙使其极其耐打。舰炮齐射穿甲伤害高。建议用穿甲或真实伤害攻击。"
+  },
+  {
+    "name": "罗伯特·李之影",
+    "nameEn": "Shadow of Robert E. Lee",
+    "type": "Boss",
+    "stage": 4,
+    "hp": "5500",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_robert_lee_boss_nobg.png",
+    "mechanic": "【南方之星】战斗开始时部署 3 道「防线」（每道 300 HP）。玩家必须逐道突破才能攻击本体。\n【战略大师】每 3 回合根据玩家上回合行为调整战术：若玩家以攻击为主→李获得 60 层防火墙；若以防御为主→李攻击力 +15 持续 2 回合。\n【葛底斯堡】HP < 30% 时孤注一掷：攻击力翻倍但防御归零。",
+    "intents": [
+      "指挥官之剑 → 造成 42 点伤害",
+      "战略调整 → 根据玩家行为调整战术",
+      "防线重建 → 恢复 1 道防线（300 HP）",
+      "葛底斯堡冲锋（HP < 30%）→ 攻击力翻倍 + 造成 60 点伤害"
+    ],
+    "logic": "防线机制使前期需要大量输出。战略调整使其能针对玩家策略。建议攻防交替避免被针对。葛底斯堡阶段伤害极高但无防御。"
+  },
+  {
+    "name": "爱迪生工人",
+    "nameEn": "Edison Worker",
+    "type": "普通",
+    "stage": 4,
+    "hp": "260 — 280",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_edison_worker_nobg.png",
+    "mechanic": "【直流电】攻击附带「电击(2)(2)」（每回合失去 HP + 有 20% 几率使 1 张手牌费用 +1）。",
+    "intents": [
+      "电击棒 → 造成 26 点伤害 + 电击(2)(2)",
+      "电流冲击 → 造成 18×2 点伤害",
+      "绝缘防御 → 获得 28 层防火墙 + 免疫电击"
+    ],
+    "logic": "电击的费用干扰是主要威胁。建议携带 Debuff 清除。"
+  },
+  {
+    "name": "电弧魔像",
+    "nameEn": "Arc Golem",
+    "type": "普通",
+    "stage": 4,
+    "hp": "340 — 360",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_arc_golem_nobg.png",
+    "mechanic": "【电弧放电】被攻击时有 30% 几率反弹 15 点伤害给攻击者。",
+    "intents": [
+      "电弧打击 → 造成 35 点伤害",
+      "连锁闪电 → 造成 20×3 点伤害",
+      "充能 → 获得 30 层防火墙 + 下回合攻击附带电击"
+    ],
+    "logic": "反弹伤害使近战攻击有风险。连锁闪电多段伤害高。"
+  },
+  {
+    "name": "电报间谍",
+    "nameEn": "Telegraph Spy",
+    "type": "普通",
+    "stage": 4,
+    "hp": "220 — 240",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_telegraph_spy_nobg.png",
+    "mechanic": "【窃听】每回合「窃听」玩家手牌，预判玩家下回合出牌并提前防御。",
+    "intents": [
+      "电报打击 → 造成 24 点伤害",
+      "窃听 → 查看玩家手牌 + 获得 20 层防火墙",
+      "情报传递 → 为所有友军提供「预判」（下回合受到的首次攻击伤害减半）"
+    ],
+    "logic": "窃听使其能预判玩家行动。情报传递使全队获得减伤。建议优先击杀。"
+  },
+  {
+    "name": "发电机精英",
+    "nameEn": "Dynamo Elite",
+    "type": "精英",
+    "stage": 4,
+    "hp": "920 — 1000",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_dynamo_elite_nobg.png",
+    "mechanic": "【交流电】每回合在「正极」和「负极」间切换。正极：攻击力 +50% 但受伤 +30%；负极：受伤 -30% 但攻击力 -50%。\n【电磁脉冲】每 4 回合释放 EMP：清除玩家所有防火墙 + 封锁 1 张手牌。",
+    "intents": [
+      "正极打击 → 造成 45 点伤害（正极状态）",
+      "负极防御 → 获得 50 层防火墙（负极状态）",
+      "电磁脉冲（每 4 回合）→ 清除玩家防火墙 + 封锁 1 牌",
+      "电流风暴 → 造成 25×2 点伤害"
+    ],
+    "logic": "正极状态攻击力高但脆弱（输出窗口）；负极状态防御强但攻击弱。EMP 极其致命需要提前准备。"
+  },
+  {
+    "name": "特斯拉之影",
+    "nameEn": "Shadow of Tesla",
+    "type": "Boss",
+    "stage": 4,
+    "hp": "6000",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s4_tesla_boss_nobg.png",
+    "mechanic": "【交流电之父】战斗场地有「电场强度」（0-100）。特斯拉每回合 +20。电场 > 50 时玩家每回合受到 15 点电击伤害；> 80 时玩家每回合有 30% 几率 1 张手牌费用 +2。\n【特斯拉线圈】每 3 回合部署 1 个特斯拉线圈（HP 150，每回合对玩家造成 12 点伤害 + 电场 +10）。场上最多 3 个。\n【无线传输】HP < 25% 时将所有特斯拉线圈的能量汇聚：造成 线圈数 × 40 的伤害。",
+    "intents": [
+      "闪电打击 → 造成 45 点伤害",
+      "部署特斯拉线圈 → 部署 1 个线圈（HP 150）",
+      "电场共振 → 电场强度 +30 + 造成 30 点伤害",
+      "无线传输（HP < 25%）→ 造成 线圈数×40 点伤害"
+    ],
+    "logic": "电场强度和特斯拉线圈双重机制。需要及时清理线圈控制电场。低血量的无线传输伤害与线圈数成正比，清理线圈后再削血。"
+  },
+  {
+    "name": "堑壕士兵",
+    "nameEn": "Trench Soldier",
+    "type": "普通",
+    "stage": 5,
+    "hp": "340 — 360",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_trench_soldier_nobg.png",
+    "mechanic": "【堑壕战】每回合在堑壕中获得 15 层防火墙。被迫离开堑壕（被击退等）时失去此效果。",
+    "intents": [
+      "步枪射击 → 造成 30 点伤害",
+      "堑壕防御 → 获得 35 层防火墙",
+      "刺刀冲锋 → 造成 25×2 点伤害（离开堑壕，失去被动）"
+    ],
+    "logic": "堑壕中持续获得防火墙。刺刀冲锋伤害高但会失去堑壕被动。"
+  },
+  {
+    "name": "毒气兵",
+    "nameEn": "Gas Trooper",
+    "type": "普通",
+    "stage": 5,
+    "hp": "300 — 320",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_gas_trooper_nobg.png",
+    "mechanic": "【毒气弹】每 2 回合释放毒气：对玩家施加「毒气(3)(3)」+ 向牌库塞入 1 张「窒息」废牌。",
+    "intents": [
+      "毒气释放 → 施加毒气(3)(3) + 塞入 1 张窒息废牌",
+      "化学打击 → 造成 28 点伤害 + 毒气(2)(2)",
+      "防毒面具 → 获得 25 层防火墙 + 免疫毒气"
+    ],
+    "logic": "毒气持续消耗 + 废牌污染。建议优先击杀并携带 Debuff 清除。"
+  },
+  {
+    "name": "坦克魔像",
+    "nameEn": "Tank Golem",
+    "type": "普通",
+    "stage": 5,
+    "hp": "400 — 420",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_tank_golem_nobg.png",
+    "mechanic": "【装甲】受到的伤害减少 10 点（最低 1）。\n【履带碾压】攻击附带 10 点真实伤害。",
+    "intents": [
+      "主炮射击 → 造成 40 点伤害",
+      "履带碾压 → 造成 30 点伤害 + 10 点真实伤害",
+      "装甲强化 → 获得 40 层防火墙 + 减伤提升至 15"
+    ],
+    "logic": "高减伤 + 真实伤害使其攻防兼备。需要穿甲或高伤害攻击。"
+  },
+  {
+    "name": "突击队精英",
+    "nameEn": "Stormtrooper Elite",
+    "type": "精英",
+    "stage": 5,
+    "hp": "1050 — 1140",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_stormtrooper_elite_nobg.png",
+    "mechanic": "【闪电战】每 2 回合行动 2 次。\n【渗透战术】攻击有 40% 几率无视防火墙。",
+    "intents": [
+      "冲锋枪扫射 → 造成 20×3 点伤害",
+      "手榴弹 → 造成 35 点伤害 + 燃烧(2)(2)",
+      "闪电突击 → 行动 2 次 + 造成 30 点伤害",
+      "战术撤退 → 获得 45 层防火墙"
+    ],
+    "logic": "双动 + 穿甲使其输出极高。建议在非双动回合集中输出。"
+  },
+  {
+    "name": "鲁登道夫之影",
+    "nameEn": "Shadow of Ludendorff",
+    "type": "Boss",
+    "stage": 5,
+    "hp": "7000",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_ludendorff_boss_nobg.png",
+    "mechanic": "【总体战】战斗场地有「战争烈度」（0-100）。每回合 +10。烈度 > 50 时所有敌人攻击力 +20%；> 80 时每回合对玩家造成 20 点环境伤害（炮火）。\n【春季攻势】每 5 回合发动「春季攻势」：所有友军同时攻击 + 鲁登道夫造成 50 点伤害。\n【兴登堡防线】HP < 30% 时部署 3 层防线（每层 400 HP）。",
+    "intents": [
+      "指挥打击 → 造成 45 点伤害",
+      "春季攻势（每 5 回合）→ 全体攻击 + 50 点伤害",
+      "战争升级 → 战争烈度 +25",
+      "兴登堡防线（HP < 30%）→ 部署 3 层防线"
+    ],
+    "logic": "战争烈度是核心机制。需要在烈度过高前击杀。春季攻势的全体攻击需要高防御。兴登堡防线使低血量阶段需要大量输出破防。"
+  },
+  {
+    "name": "辐射僵尸",
+    "nameEn": "Radiation Zombie",
+    "type": "普通",
+    "stage": 5,
+    "hp": "320 — 340",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_radiation_zombie_nobg.png",
+    "mechanic": "【辐射】被击杀时爆炸，对玩家造成 20 点真实伤害 + 施加「辐射(2)(3)」。",
+    "intents": [
+      "辐射啃咬 → 造成 28 点伤害 + 辐射(1)(3)",
+      "辐射冲击 → 造成 22×2 点伤害",
+      "自爆（HP < 15%）→ 造成 40 点真实伤害 + 辐射(3)(3)"
+    ],
+    "logic": "击杀时的辐射爆炸是主要威胁。建议在高防御时击杀。低血量自爆伤害更高。"
+  },
+  {
+    "name": "防化科学家",
+    "nameEn": "Hazmat Scientist",
+    "type": "普通",
+    "stage": 5,
+    "hp": "280 — 300",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_hazmat_scientist_nobg.png",
+    "mechanic": "【放射实验】每 2 回合对玩家进行「实验」：随机施加 1 种辐射效果（HP 流失/攻击力降低/费用增加）。",
+    "intents": [
+      "放射射线 → 造成 30 点伤害",
+      "放射实验 → 随机辐射效果",
+      "防化防御 → 获得 30 层防火墙 + 免疫辐射",
+      "实验数据 → 为 Boss 提供「研究(1)」（Boss 攻击力 +5）"
+    ],
+    "logic": "辅助型。随机辐射效果干扰玩家。为 Boss 提供研究增益。建议优先击杀。"
+  },
+  {
+    "name": "核反应堆魔像",
+    "nameEn": "Nuclear Golem",
+    "type": "普通",
+    "stage": 5,
+    "hp": "420 — 440",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_nuclear_golem_nobg.png",
+    "mechanic": "【核裂变】每 5 回合「裂变」：造成 60 点伤害 + 自身 HP 减半 + 分裂为 2 个小型核魔像（各 100 HP）。",
+    "intents": [
+      "核能打击 → 造成 38 点伤害",
+      "辐射波 → 造成 25 点伤害 + 辐射(2)(2)",
+      "核裂变（每 5 回合）→ 造成 60 点伤害 + 分裂",
+      "核心防御 → 获得 40 层防火墙"
+    ],
+    "logic": "裂变是核心机制。5 回合内击杀可避免裂变。裂变后分裂为 2 个小型魔像需要额外处理。"
+  },
+  {
+    "name": "原子精英",
+    "nameEn": "Atomic Elite",
+    "type": "精英",
+    "stage": 5,
+    "hp": "1100 — 1200",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_atomic_elite_nobg.png",
+    "mechanic": "【链式反应】每次被攻击时积累 1 层「反应」。每 5 层反应释放「链式爆炸」：造成 反应层数 × 8 的伤害。\n【半衰期】每 6 回合攻击力减半但 HP 恢复 20%。",
+    "intents": [
+      "原子打击 → 造成 42 点伤害",
+      "链式爆炸（每 5 层反应）→ 造成 反应×8 点伤害",
+      "核聚变 → 获得 50 层防火墙 + 攻击力 +10",
+      "半衰期（每 6 回合）→ 攻击力减半 + 恢复 20% HP"
+    ],
+    "logic": "链式反应使多段攻击有风险（快速积累反应层数）。建议用少次高伤攻击。半衰期回合攻击力降低是输出窗口。"
+  },
+  {
+    "name": "奥本海默之影",
+    "nameEn": "Shadow of Oppenheimer",
+    "type": "Boss",
+    "stage": 5,
+    "hp": "7500",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_oppenheimer_boss_nobg.png",
+    "mechanic": "【曼哈顿计划】战斗有「研究进度」（0-100%）。每回合 +10%。进度 100% 时释放「原子弹」：造成 100 点真实伤害 + 清空进度。\n【我成了死神】HP < 20% 时进入「死神」形态：每回合造成 30 点真实伤害 + 研究进度每回合 +20%。\n【三位一体】每 4 回合进行「核试验」：造成 40 点伤害 + 研究进度 +15%。",
+    "intents": [
+      "量子打击 → 造成 48 点伤害",
+      "原子弹（进度 100%）→ 造成 100 点真实伤害 + 清空进度",
+      "三位一体（每 4 回合）→ 造成 40 点伤害 + 进度 +15%",
+      "死神形态（HP < 20%）→ 每回合 30 真实伤害 + 进度加速"
+    ],
+    "logic": "研究进度是核心。原子弹 100 点真实伤害几乎致命。需要在进度满之前准备足够 HP 或在 10 回合内击杀。死神形态加速进度使低血量阶段极其紧迫。"
+  },
+  {
+    "name": "恩尼格玛无人机",
+    "nameEn": "Enigma Drone",
+    "type": "普通",
+    "stage": 5,
+    "hp": "310 — 330",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_enigma_drone_nobg.png",
+    "mechanic": "【加密】所有行动意图被「加密」显示（无法预判下回合行动）。每 3 回合密码轮换。",
+    "intents": [
+      "加密攻击 → 造成 32 点伤害（意图显示为???）",
+      "数据窃取 → 偷取玩家 1 点算力",
+      "加密防御 → 获得 30 层防火墙（意图显示为???）"
+    ],
+    "logic": "加密使其行动不可预判。需要准备攻防兼备的手牌。"
+  },
+  {
+    "name": "密码破译员",
+    "nameEn": "Codebreaker",
+    "type": "普通",
+    "stage": 5,
+    "hp": "270 — 290",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_codebreaker_nobg.png",
+    "mechanic": "【破译】每 2 回合「破译」玩家 1 张手牌：该牌效果减半。",
+    "intents": [
+      "解码打击 → 造成 28 点伤害",
+      "破译 → 玩家 1 张手牌效果减半",
+      "情报分析 → 获得 25 层防火墙 + 为友军提供「预判」"
+    ],
+    "logic": "破译削弱玩家手牌效果。建议在破译回合打出低价值牌。"
+  },
+  {
+    "name": "炸弹机构造体",
+    "nameEn": "Bombe Construct",
+    "type": "普通",
+    "stage": 5,
+    "hp": "380 — 400",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_bombe_construct_nobg.png",
+    "mechanic": "【解密引擎】每回合「解密」1 层玩家防火墙（移除 20 层防火墙）。解密 3 次后获得「完全解密」：下次攻击无视所有防火墙。",
+    "intents": [
+      "机械碾压 → 造成 35 点伤害",
+      "解密 → 移除玩家 20 层防火墙",
+      "完全解密攻击 → 造成 40 点伤害（无视所有防火墙）",
+      "重新校准 → 获得 35 层防火墙"
+    ],
+    "logic": "持续移除玩家防火墙。完全解密后攻击无视防火墙极其致命。建议在完全解密前击杀。"
+  },
+  {
+    "name": "密码精英",
+    "nameEn": "Cipher Elite",
+    "type": "精英",
+    "stage": 5,
+    "hp": "1080 — 1170",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_cipher_elite_nobg.png",
+    "mechanic": "【恩尼格玛】每 3 回合「加密」玩家 2 张手牌：这些牌的效果被随机替换为其他效果。\n【超级解密】每 5 回合「解密」玩家整个卡组：本回合所有牌费用 +1。",
+    "intents": [
+      "密码打击 → 造成 40 点伤害",
+      "恩尼格玛加密 → 加密玩家 2 张手牌",
+      "超级解密 → 玩家所有牌费用 +1（本回合）",
+      "密码护盾 → 获得 50 层防火墙"
+    ],
+    "logic": "加密和解密双重干扰。加密随机化手牌效果，解密增加费用。建议快速击杀。"
+  },
+  {
+    "name": "图灵之影",
+    "nameEn": "Shadow of Turing",
+    "type": "Boss",
+    "stage": 5,
+    "hp": "7800",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_turing_boss_nobg.png",
+    "mechanic": "【图灵机】图灵有「计算状态」在多个「状态」间转换。每个状态有不同行为模式。状态转换规则基于玩家上回合行为：\n状态 A（攻击）：若玩家上回合以攻击为主→转入状态 B；否则留在 A。\n状态 B（防御）：若玩家上回合以防御为主→转入状态 C；否则留在 B。\n状态 C（干扰）：无条件转入状态 A。\n【图灵测试】每 5 回合进行「图灵测试」：若玩家连续 3 回合行为模式相同，造成 80 点伤害。\n【停机问题】HP < 15% 时进入「停机」：每回合 50% 几率无法行动，50% 几率行动 2 次。",
+    "intents": [
+      "状态 A·计算攻击 → 造成 48 点伤害",
+      "状态 B·防火墙构建 → 获得 60 层防火墙",
+      "状态 C·逻辑炸弹 → 加密玩家 3 张手牌 + 造成 30 点伤害",
+      "图灵测试 → 若玩家行为重复则造成 80 点伤害"
+    ],
+    "logic": "图灵机状态转换基于玩家行为。需要变化出牌策略避免被预判。图灵测试惩罚重复行为。停机问题的随机性使低血量阶段不可预测。"
+  },
+  {
+    "name": "时空异常体",
+    "nameEn": "Spacetime Anomaly",
+    "type": "普通",
+    "stage": 5,
+    "hp": "350 — 370",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_spacetime_anomaly_nobg.png",
+    "mechanic": "【时间膨胀】每 3 回合「扭曲时间」：玩家下回合行动顺序反转（先敌后我变为先我后敌，或反之）。",
+    "intents": [
+      "时空撕裂 → 造成 35 点伤害",
+      "时间膨胀 → 扭曲时间（行动顺序反转）",
+      "空间折叠 → 造成 20×2 点伤害 + 施加「时空错乱(1)」"
+    ],
+    "logic": "时间膨胀改变行动顺序使防御策略需要调整。时空错乱干扰出牌。"
+  },
+  {
+    "name": "量子物理学家",
+    "nameEn": "Quantum Physicist",
+    "type": "普通",
+    "stage": 5,
+    "hp": "290 — 310",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_quantum_physicist_nobg.png",
+    "mechanic": "【量子叠加】每回合行动前处于「叠加态」：同时准备攻击和防御，根据玩家出牌「坍缩」为其中一种。若玩家先出攻击牌→坍缩为防御；先出防御牌→坍缩为攻击。",
+    "intents": [
+      "量子坍缩·攻 → 造成 35 点伤害",
+      "量子坍缩·守 → 获得 40 层防火墙",
+      "量子纠缠 → 与玩家「纠缠」：玩家受到的伤害同时施加给物理学家（持续 2 回合）"
+    ],
+    "logic": "量子叠加使其总能针对玩家行为。量子纠缠使伤害共享，可以利用这个机制。"
+  },
+  {
+    "name": "引力井",
+    "nameEn": "Gravity Well",
+    "type": "普通",
+    "stage": 5,
+    "hp": "400 — 420",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_gravity_well_nobg.png",
+    "mechanic": "【引力场】每回合「吸引」玩家 1 张手牌到弃牌堆。被吸引的牌下回合无法使用。",
+    "intents": [
+      "引力碾压 → 造成 38 点伤害",
+      "引力吸引 → 吸引玩家 1 张手牌到弃牌堆",
+      "事件视界 → 获得 35 层防火墙 + 下回合吸引 2 张牌",
+      "潮汐力 → 造成 25×2 点伤害"
+    ],
+    "logic": "持续吸引手牌削弱玩家手牌质量。事件视界后吸引翻倍。建议快速击杀。"
+  },
+  {
+    "name": "相对论精英",
+    "nameEn": "Relativity Elite",
+    "type": "精英",
+    "stage": 5,
+    "hp": "1150 — 1250",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_relativity_elite_nobg.png",
+    "mechanic": "【光速】攻击速度极快，每回合行动 2 次。\n【质能方程】每 4 回合将自身 HP 转化为伤害：消耗 100 HP 造成 E=mc² 伤害（100 × 2 = 200 点伤害）。\n【时间减速】每 3 回合使玩家「时间减速」：下回合少抽 2 张牌。",
+    "intents": [
+      "光速打击 → 造成 35 点伤害（行动 2 次）",
+      "质能方程（每 4 回合）→ 消耗 100 HP 造成 200 点伤害",
+      "时间减速 → 玩家下回合少抽 2 张牌",
+      "相对论护盾 → 获得 55 层防火墙"
+    ],
+    "logic": "双动 + 质能方程使其输出极高。质能方程自伤 100 但造成 200 伤害。时间减速严重限制玩家。建议在质能方程回合全力防御。"
+  },
+  {
+    "name": "爱因斯坦之影",
+    "nameEn": "Shadow of Einstein",
+    "type": "Boss",
+    "stage": 5,
+    "hp": "8500",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_einstein_boss_nobg.png",
+    "mechanic": "【相对论】战斗有「时空曲率」（0-100）。每回合 +8。曲率 > 50 时时间流速改变：玩家每回合少抽 1 张牌；> 80 时空间扭曲：玩家打出的牌有 20% 几率效果反转。\n【思想实验】每 4 回合进行 1 次「思想实验」：创造 1 个「悖论」（持续 3 回合的特殊效果，如「薛定谔」：玩家攻击有 50% 几率伤害翻倍或无效）。\n【统一场论】HP < 20% 时尝试「统一场论」：每回合恢复 100 HP + 时空曲率每回合 +20。若 3 回合内未被击杀，释放「宇宙重启」：玩家 HP 设为 1。",
+    "intents": [
+      "引力波 → 造成 50 点伤害",
+      "思想实验 → 创造 1 个悖论效果",
+      "时空扭曲 → 时空曲率 +20 + 造成 35 点伤害",
+      "统一场论（HP < 20%）→ 恢复 100 HP/回合 + 曲率加速"
+    ],
+    "logic": "时空曲率是核心。需要在曲率过高前击杀。思想实验的悖论效果增加不确定性。统一场论是最终倒计时——3 回合内必须击杀否则宇宙重启。"
+  },
+  {
+    "name": "数据爬虫",
+    "nameEn": "Data Crawler",
+    "type": "普通",
+    "stage": 5,
+    "hp": "330 — 350",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_data_crawler_nobg.png",
+    "mechanic": "【数据挖掘】每回合「挖掘」玩家卡组信息。3 回合后获得「数据画像」：攻击必定命中玩家弱点（伤害 +30%）。",
+    "intents": [
+      "数据攻击 → 造成 30 点伤害（数据画像后 39）",
+      "数据挖掘 → 积累数据（3 回合后获得画像）",
+      "网络防御 → 获得 30 层防火墙",
+      "DDoS → 造成 18×3 点伤害"
+    ],
+    "logic": "数据画像使其 3 回合后伤害提升 30%。建议在画像前击杀。"
+  },
+  {
+    "name": "黑客",
+    "nameEn": "Hacker",
+    "type": "普通",
+    "stage": 5,
+    "hp": "280 — 300",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_hacker_nobg.png",
+    "mechanic": "【入侵】每 2 回合「入侵」玩家系统：随机效果（偷取 1 点算力/封锁 1 张牌/将 1 张牌费用设为 0 但效果反转）。",
+    "intents": [
+      "代码注入 → 造成 28 点伤害 + 施加「漏洞(1)」",
+      "系统入侵 → 随机入侵效果",
+      "后门植入 → 获得 25 层防火墙 + 下回合入侵必定偷取算力",
+      "键盘风暴 → 造成 20×2 点伤害"
+    ],
+    "logic": "入侵的随机效果持续干扰。后门植入后必定偷取算力。建议优先击杀。"
+  },
+  {
+    "name": "服务器魔像",
+    "nameEn": "Server Golem",
+    "type": "普通",
+    "stage": 5,
+    "hp": "450 — 470",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_server_golem_nobg.png",
+    "mechanic": "【分布式】受到致命伤害时，若场上有其他数字单位，将 HP 设为 1 并转移 50% 已受伤害给该单位。每场战斗限 1 次。\n【防火墙】每回合自动获得 20 层防火墙。",
+    "intents": [
+      "服务器碾压 → 造成 40 点伤害",
+      "数据洪流 → 造成 25×2 点伤害",
+      "系统备份 → 恢复 60 HP + 获得 30 层防火墙",
+      "分布式转移（致命伤害时）→ HP 设为 1 + 转移伤害"
+    ],
+    "logic": "分布式使其有一次免死。自动防火墙使其持续获得防御。建议先清理其他数字单位再击杀。"
+  },
+  {
+    "name": "AI 精英",
+    "nameEn": "AI Elite",
+    "type": "精英",
+    "stage": 5,
+    "hp": "1200 — 1300",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_ai_elite_nobg.png",
+    "mechanic": "【机器学习】每回合「学习」玩家出牌模式。5 回合后获得「完全预测」：提前知道玩家下回合所有出牌并完美应对。\n【神经网络】每 3 回合「训练」：永久提升攻击力 +8 和防火墙获取 +10。",
+    "intents": [
+      "AI 打击 → 造成 45 点伤害",
+      "机器学习 → 学习玩家模式（5 回合后完全预测）",
+      "神经网络训练 → 永久攻击力 +8 + 防火墙 +10",
+      "完全预测（5 回合后）→ 完美应对玩家出牌 + 造成 50 点伤害"
+    ],
+    "logic": "机器学习使其 5 回合后能完美预测。神经网络持续强化。必须在 5 回合内击杀或准备应对完全预测。"
+  },
+  {
+    "name": "数字监察者",
+    "nameEn": "Digital Overseer",
+    "type": "Boss",
+    "stage": 5,
+    "hp": "10000",
+    "portrait": "https://raw.githubusercontent.com/142857271828/EOA/main/enemies/enemy_s5_digital_overseer_boss_nobg.png",
+    "mechanic": "【全知全能】最终 Boss。战斗分 4 阶段：\n阶段 1（HP > 75%）「数据收集」：每回合扫描玩家卡组，3 回合后获得完全信息。\n阶段 2（50-75%）「算法优化」：根据玩家卡组弱点定制攻击策略。攻击力 +30%。\n阶段 3（25-50%）「人工智能」：每回合行动 2 次 + 预判玩家出牌。\n阶段 4（< 25%）「奇点」：攻击力每回合 +10%。每 3 回合释放「数据洪流」：造成 80 点伤害 + 向牌库塞入 3 张废牌。\n【防火墙矩阵】每回合自动获得 30 层防火墙。\n【系统重启】HP < 10% 时尝试「重启」：3 回合倒计时，若未被击杀则恢复至 50% HP。",
+    "intents": [
+      "数据扫描（阶段 1）→ 扫描卡组 + 造成 40 点伤害",
+      "算法攻击（阶段 2）→ 造成 55 点伤害（针对弱点）",
+      "AI 双击（阶段 3）→ 行动 2 次 + 造成 45 点伤害",
+      "奇点爆发（阶段 4）→ 造成 60+ 点伤害（递增）+ 数据洪流"
+    ],
+    "logic": "四阶段最终 Boss。阶段 1 相对温和但在收集信息；阶段 2 开始针对性攻击；阶段 3 双动极具威胁；阶段 4 是 DPS 竞赛。系统重启是最后保命手段，必须在 3 回合内击杀。"
+  }
+]
