@@ -1,0 +1,21 @@
+{
+  "name": "eoa-card-game-data",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Card and enemy data + art assets for the 时空星火 (Spacetime Spark) card game.",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "validate": "node scripts/validate.mjs",
+    "test": "npm run typecheck && npm run validate",
+    "build": "tsc --noEmit false --outDir dist",
+    "demo": "tsx scripts/demo.mts",
+    "start": "tsx scripts/demo.mts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.21",
+    "tsx": "^4.19.2",
+    "typescript": "^5.4.5"
+  }
+}
